@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F5F5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Serviço concluído · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{"st": "confirmar", "tipo": "incompleto", "fotos": 0}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <header class="top">
+    <a class="back" href="pedido.html?passo=3" data-back aria-label="Voltar"><i data-i="voltar"></i></a>
+    <h1 class="title" data-text="titulo"></h1>
+  </header>
+
+  <main class="scroll">
+    <div class="card hstack" style="padding: 12px 14px">
+      <span class="av" aria-hidden="true">WL</span>
+      <span style="flex: 1"><span class="strong" style="display: block">Wagner Lima</span><span class="small muted">Pintura do teto · Qui, 6 · R$ 420</span></span>
+    </div>
+
+    <div data-show="st=confirmar">
+      <h2 class="h1 sec" style="font-size: 24px">O Wagner marcou o serviço como concluído</h2>
+      <p class="muted">Confira se está tudo certo. O pagamento só acontece depois que você confirmar.</p>
+      <h3 class="h2 sec">Fotos do serviço</h3>
+      <div class="grid2"><div class="ph">[FOTO] Antes</div><div class="ph warm">[FOTO] Depois</div></div>
+      <p class="hint" style="margin-top: 8px">Enviadas pelo profissional hoje, às 21:10.</p>
+      <h3 class="h2 sec">O que foi combinado</h3>
+      <div class="group"><p class="row">Raspagem, selador e duas demãos no teto do quarto. Material incluso.</p></div>
+    </div>
+
+    <div data-show="st=problema" hidden>
+      <p class="muted sec">Conte o que aconteceu. O pagamento fica suspenso até a equipe do Quebra Galho analisar.</p>
+      <h3 class="h2 sec">Qual é o problema?</h3>
+      <div class="chips" role="group" aria-label="Tipo de problema">
+        <button type="button" class="chip" data-set="tipo=incompleto" data-on="tipo=incompleto">Serviço incompleto</button>
+        <button type="button" class="chip" data-set="tipo=qualidade" data-on="tipo=qualidade">Qualidade</button>
+        <button type="button" class="chip" data-set="tipo=danos" data-on="tipo=danos">Danos no imóvel</button>
+        <button type="button" class="chip" data-set="tipo=outro" data-on="tipo=outro">Outro</button>
+      </div>
+      <h3 class="h2 sec"><label for="relato">Descreva</label></h3>
+      <textarea class="ta" id="relato" placeholder="Ex.: Ficou uma parte do teto sem a segunda demão, perto da janela."></textarea>
+      <div class="grid3" style="margin-top: 10px">
+        <div class="ph warm" data-show="f1" hidden>[FOTO] 1</div>
+        <div class="ph warm" data-show="f2" hidden>[FOTO] 2</div>
+        <button type="button" class="ph-add" data-add="fotos:1" data-max="2" data-show="!f2"><i data-i="camera"></i>Adicionar foto</button>
+      </div>
+    </div>
+
+    <div data-show="st=analise" hidden style="text-align: center; padding-top: 22px">
+      <span class="badge" style="width: 64px; height: 64px; margin: 0 auto"><i data-i="escudo-alerta" class="l"></i></span>
+      <h2 class="h1" style="margin-top: 14px; font-size: 24px">Recebemos seu relato</h2>
+      <p class="muted">O Wagner tem até 2 dias para responder. Se vocês não chegarem a um acordo, nossa equipe faz a mediação. Nenhum valor é cobrado enquanto isso.</p>
+      <div class="group" style="margin-top: 20px; text-align: left">
+        <div class="row"><span class="grow muted">Protocolo</span><b>[NÚMERO]</b></div>
+        <div class="row"><span class="grow muted">Situação</span><span class="tag warm">Em análise</span></div>
+        <div class="row"><span class="grow muted">Pagamento</span><b>Suspenso</b></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <a class="btn" href="pagamento.html" data-show="st=confirmar">Sim, está tudo certo</a>
+    <button type="button" class="btn-quiet" data-show="st=confirmar" data-set="st=problema">Relatar um problema</button>
+    <div class="row2" data-show="st=problema" hidden>
+      <button type="button" class="btn-sec" data-set="st=confirmar">Cancelar</button>
+      <button type="button" class="btn" data-set="st=analise">Enviar relato</button>
+    </div>
+    <a class="btn-dark" href="disputa.html" data-show="st=analise" hidden>Acompanhar relato</a>
+  </footer>
+</div>
+<script src="assets/app.js"></script>
+<script>
+App.computed = function (s) {
+  return { f1: s.fotos >= 1, f2: s.fotos >= 2, titulo: { confirmar: 'Serviço concluído?', problema: 'Relatar problema', analise: 'Relato enviado' }[s.st] };
+};
+</script>
+</body>
+</html>

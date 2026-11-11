@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F5F5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Seu perfil profissional · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{"sel": ["Pintor", "Gesseiro"], "anos": 12, "erro": false, "editar": false}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <header class="top">
+    <a class="back" href="index.html" data-back aria-label="Voltar"><i data-i="voltar"></i></a>
+    <div style="flex: 1; padding-right: 8px" data-show="!editar">
+      <p class="small muted strong" style="margin-bottom: 6px">Passo 1 de 3 · Seu perfil</p>
+      <div class="steps" aria-hidden="true"><span class="on"></span><span></span><span></span></div>
+    </div>
+    <h1 class="title" data-show="editar" hidden>Editar perfil</h1>
+  </header>
+
+  <main class="scroll">
+    <h1 class="h1" data-show="!editar">Mostre o que<br>você sabe fazer</h1>
+    <p class="lead" data-show="!editar" style="margin-bottom: 16px">Quem procura serviço vai ver isso no seu perfil.</p>
+
+    <div class="card" style="margin-bottom: 22px">
+      <div class="between" style="margin-bottom: 8px"><span class="strong">Perfil completo</span><span class="num" style="font-size: 20px; color: var(--laranja-escuro)"><span data-text="pct"></span>%</span></div>
+      <div class="bar" role="progressbar" aria-label="Completude do perfil" aria-valuemin="0" aria-valuemax="100"><span data-width="pct"></span></div>
+      <p class="hint" style="margin-top: 8px">Falta: <span data-text="falta"></span></p>
+    </div>
+
+    <div class="fields">
+      <div class="field"><label class="lbl" for="pnome">Nome que aparece no perfil</label><input class="in" id="pnome" type="text" placeholder="Wagner Lima" autocomplete="name"></div>
+      <div class="field" data-show="!editar"><label class="lbl" for="pcel">Celular (WhatsApp)</label><input class="in" id="pcel" type="tel" placeholder="(85) 9 0000-0000" autocomplete="tel"></div>
+      <div class="field" data-show="!editar"><label class="lbl" for="psenha">Senha</label><input class="in" id="psenha" type="password" placeholder="Mínimo de 8 caracteres" autocomplete="new-password"></div>
+    </div>
+
+    <section class="sec">
+      <h2 class="h2" style="margin-bottom: 2px">Seus serviços</h2>
+      <p class="hint" style="margin-bottom: 12px">Escolha um ou mais. <b style="color: var(--grafite)" data-text="qtd"></b></p>
+      <div class="opts grid2" role="group" aria-label="Categorias de serviço">
+        <button type="button" class="opt" style="padding: 12px" data-toggle="sel:Pintor" data-on="sel~Pintor"><span class="mark sq"><i data-i="check"></i></span><span class="tx strong">Pintor</span></button>
+        <button type="button" class="opt" style="padding: 12px" data-toggle="sel:Gesseiro" data-on="sel~Gesseiro"><span class="mark sq"><i data-i="check"></i></span><span class="tx strong">Gesseiro</span></button>
+        <button type="button" class="opt" style="padding: 12px" data-toggle="sel:Marceneiro" data-on="sel~Marceneiro"><span class="mark sq"><i data-i="check"></i></span><span class="tx strong">Marceneiro</span></button>
+        <button type="button" class="opt" style="padding: 12px" data-toggle="sel:Pedreiro" data-on="sel~Pedreiro"><span class="mark sq"><i data-i="check"></i></span><span class="tx strong">Pedreiro</span></button>
+        <button type="button" class="opt" style="padding: 12px" data-toggle="sel:Encanador" data-on="sel~Encanador"><span class="mark sq"><i data-i="check"></i></span><span class="tx strong">Encanador</span></button>
+        <button type="button" class="opt" style="padding: 12px" data-toggle="sel:Eletricista" data-on="sel~Eletricista"><span class="mark sq"><i data-i="check"></i></span><span class="tx strong">Eletricista</span></button>
+        <button type="button" class="opt" style="padding: 12px" data-toggle="sel:Jardineiro" data-on="sel~Jardineiro"><span class="mark sq"><i data-i="check"></i></span><span class="tx strong">Jardineiro</span></button>
+        <button type="button" class="opt" style="padding: 12px" data-toggle="sel:Outros" data-on="sel~Outros"><span class="mark sq"><i data-i="check"></i></span><span class="tx strong">Outros reparos</span></button>
+      </div>
+      <p class="err" role="alert" style="margin-top: 10px" data-show="erro&!sel" hidden><i data-i="alerta" class="s"></i>Escolha ao menos uma categoria para salvar.</p>
+    </section>
+
+    <section class="sec">
+      <h2 class="h2">Anos de experiência</h2>
+      <div class="hstack" style="gap: 14px">
+        <button type="button" class="icon-btn" style="width: 48px; height: 48px; font-size: 22px; font-weight: 700" data-add="anos:-1" data-min="0" aria-label="Diminuir">−</button>
+        <span class="num" style="min-width: 70px; text-align: center; font-size: 26px" aria-live="polite" data-text="anosTxt"></span>
+        <button type="button" class="icon-btn" style="width: 48px; height: 48px; font-size: 22px; font-weight: 700" data-add="anos:1" data-max="60" aria-label="Aumentar">+</button>
+      </div>
+    </section>
+
+    <section class="sec">
+      <h2 class="h2"><label for="bio">Fale um pouco sobre você</label></h2>
+      <textarea class="ta" id="bio" placeholder="Ex.: Trabalho com pintura e gesso há 12 anos. Deixo tudo limpo no fim do dia."></textarea>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <a class="btn" href="prestador-evidencias.html" data-show="sel&!editar">Salvar perfil</a>
+    <a class="btn" href="prestador-perfil.html" data-show="sel&editar" hidden>Salvar alterações</a>
+    <button type="button" class="btn" data-show="!sel" data-set="erro=true" hidden>Salvar perfil</button>
+    <a class="btn-quiet" href="perfil.html?dono=true">Visualizar meu perfil</a>
+  </footer>
+</div>
+<script src="assets/app.js"></script>
+<script>
+App.computed = function (s) {
+  var n = s.sel.length;
+  return {
+    qtd: n === 0 ? 'Nenhum escolhido' : n === 1 ? '1 escolhido' : n + ' escolhidos',
+    anosTxt: s.anos === 1 ? '1 ano' : s.anos + ' anos',
+    pct: s.editar ? 85 : (n ? 40 : 25),
+    falta: s.editar ? 'mais 1 foto de trabalho' : (n ? 'fotos de trabalhos, comprovações e agenda' : 'categorias, fotos, comprovações e agenda')
+  };
+};
+</script>
+</body>
+</html>

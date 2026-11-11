@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F5F5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Solicitar serviço · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{"servico": "Pintura", "quando": "agendar", "dia": "6", "periodo": "Noite", "fotos": 0, "end": "casa", "trocar": false}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <header class="top">
+    <a class="back" href="perfil.html" data-back aria-label="Voltar"><i data-i="voltar"></i></a>
+    <h1 class="title">Solicitar serviço</h1>
+  </header>
+
+  <main class="scroll">
+    <div class="card hstack" style="padding: 12px 14px">
+      <span class="av" aria-hidden="true">WL</span>
+      <span style="flex: 1"><span class="strong" style="display: block">Wagner Lima</span><span class="small muted">Pintor · Gesseiro · Marceneiro</span></span>
+      <span class="rating"><i data-i="estrela"></i><b>4,9</b></span>
+    </div>
+
+    <section class="sec">
+      <h2 class="h2">O que precisa?</h2>
+      <div class="chips" role="group" aria-label="Tipo de serviço">
+        <button type="button" class="chip" data-set="servico=Pintura" data-on="servico=Pintura">Pintura</button>
+        <button type="button" class="chip" data-set="servico=Gesso" data-on="servico=Gesso">Gesso</button>
+        <button type="button" class="chip" data-set="servico=Marcenaria" data-on="servico=Marcenaria">Marcenaria</button>
+        <button type="button" class="chip" data-set="servico=Outro" data-on="servico=Outro">Outro</button>
+      </div>
+    </section>
+
+    <section class="sec">
+      <h2 class="h2">Para quando?</h2>
+      <div class="opts grid2" role="radiogroup" aria-label="Quando">
+        <button type="button" class="opt" role="radio" style="flex-direction: column; align-items: flex-start; gap: 6px" data-set="quando=urgente" data-on="quando=urgente">
+          <i data-i="raio" style="color: var(--laranja)"></i><span><span class="t">É urgente</span><span class="d">Ainda hoje</span></span>
+        </button>
+        <button type="button" class="opt" role="radio" style="flex-direction: column; align-items: flex-start; gap: 6px" data-set="quando=agendar" data-on="quando=agendar">
+          <i data-i="calendario" style="color: var(--laranja-forte)"></i><span><span class="t">Agendar</span><span class="d">Escolher dia e horário</span></span>
+        </button>
+      </div>
+      <div class="note-box" style="margin-top: 12px" data-show="quando=urgente" hidden><i data-i="alerta" class="s"></i><span>Pedidos urgentes têm um pequeno acréscimo na taxa. Você vê o valor antes de confirmar.</span></div>
+      <div data-show="quando=agendar" style="margin-top: 12px">
+        <div class="chips scrollx" role="group" aria-label="Dia" style="margin-bottom: 10px">
+          <button type="button" class="chip" style="flex-direction: column; gap: 0; min-width: 58px; padding: 8px 0; justify-content: center" data-set="dia=6" data-on="dia=6"><span class="small">Qui</span><b class="num" style="font-size: 19px">6</b></button>
+          <button type="button" class="chip" style="flex-direction: column; gap: 0; min-width: 58px; padding: 8px 0; justify-content: center" data-set="dia=7" data-on="dia=7"><span class="small">Sex</span><b class="num" style="font-size: 19px">7</b></button>
+          <button type="button" class="chip" style="flex-direction: column; gap: 0; min-width: 58px; padding: 8px 0; justify-content: center" data-set="dia=8" data-on="dia=8"><span class="small">Sáb</span><b class="num" style="font-size: 19px">8</b></button>
+          <button type="button" class="chip" style="flex-direction: column; gap: 0; min-width: 58px; padding: 8px 0; justify-content: center" data-set="dia=9" data-on="dia=9"><span class="small">Dom</span><b class="num" style="font-size: 19px">9</b></button>
+          <button type="button" class="chip" style="flex-direction: column; gap: 0; min-width: 58px; padding: 8px 0; justify-content: center" data-set="dia=10" data-on="dia=10"><span class="small">Seg</span><b class="num" style="font-size: 19px">10</b></button>
+        </div>
+        <div class="seg" role="group" aria-label="Período">
+          <button type="button" data-set="periodo=Manhã" data-on="periodo=Manhã">Manhã</button>
+          <button type="button" data-set="periodo=Tarde" data-on="periodo=Tarde">Tarde</button>
+          <button type="button" data-set="periodo=Noite" data-on="periodo=Noite">Noite</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <h2 class="h2"><label for="desc">Conte o que aconteceu</label></h2>
+      <textarea class="ta" id="desc" placeholder="Ex.: Mancha de infiltração no teto do quarto, uns 2 m². Preciso raspar e pintar de novo."></textarea>
+      <div class="grid3" style="margin-top: 10px">
+        <div class="ph warm" data-show="f1" hidden>[FOTO] 1</div>
+        <div class="ph warm" data-show="f2" hidden>[FOTO] 2</div>
+        <div class="ph warm" data-show="f3" hidden>[FOTO] 3</div>
+        <button type="button" class="ph-add" data-add="fotos:1" data-max="3" data-show="!f3"><i data-i="camera"></i>Adicionar foto</button>
+      </div>
+      <p class="hint" style="margin-top: 8px">Fotos ajudam o profissional a entender e dar um valor mais certo.</p>
+    </section>
+
+    <section class="sec">
+      <div class="between"><h2 class="h2" style="margin: 0">Endereço</h2><button type="button" class="btn-quiet" style="width: auto; padding: 0 4px" data-toggle="trocar"><span data-show="!trocar">Trocar</span><span data-show="trocar" hidden>Pronto</span></button></div>
+      <div class="group" style="margin-top: 8px">
+        <button type="button" class="row" role="radio" data-set="end=casa&trocar=false" data-on="end=casa" data-show="trocar|end=casa">
+          <i data-i="pin" style="color: var(--laranja-forte)"></i><span class="grow"><span class="t">Casa</span><span class="d">[RUA E NÚMERO] · Aldeota</span></span><span class="mark" data-show="trocar" hidden></span>
+        </button>
+        <button type="button" class="row" role="radio" data-set="end=trabalho&trocar=false" data-on="end=trabalho" data-show="trocar|end=trabalho" hidden>
+          <i data-i="pin" style="color: var(--laranja-forte)"></i><span class="grow"><span class="t">Trabalho</span><span class="d">[RUA E NÚMERO] · Centro</span></span><span class="mark" data-show="trocar" hidden></span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <a class="btn" href="pedido.html">Enviar pedido</a>
+    <p class="note">Nada é cobrado agora. Você paga só depois do serviço concluído.</p>
+  </footer>
+</div>
+<script src="assets/app.js"></script>
+<script>
+App.computed = function (s) { return { f1: s.fotos >= 1, f2: s.fotos >= 2, f3: s.fotos >= 3 }; };
+</script>
+</body>
+</html>

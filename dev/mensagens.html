@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F5F5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Mensagens · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <header class="top" style="background: #fff; border-bottom: 1px solid var(--linha)">
+    <a class="back" href="perfil.html" data-back aria-label="Voltar"><i data-i="voltar"></i></a>
+    <span class="av" id="avOutro" aria-hidden="true">WL</span>
+    <div style="flex: 1">
+      <h1 class="title" id="nomeOutro" style="font-size: 17px">Wagner Lima</h1>
+      <p class="small muted" id="subOutro">Pintor · costuma responder em 1h</p>
+    </div>
+  </header>
+
+  <main class="scroll" style="padding-top: 14px">
+    <div class="note-box" style="margin-bottom: 14px"><i data-i="cadeado" class="s"></i><span class="small">Converse por aqui: combinados ficam registrados e ajudam em caso de problema. Não compartilhe senhas nem dados de cartão.</span></div>
+    <div class="msgs" id="msgs">
+      <span class="day">Hoje</span>
+      <div class="msg me" data-autor="daniela">Oi, Wagner! A mancha no teto está aumentando. Dá para ir hoje à noite?<span class="h">11:24</span></div>
+      <div class="msg" data-autor="wagner">Boa tarde, Daniela. Consigo sim, a partir das 18h. Pode mandar uma foto do teto?<span class="h">11:40</span></div>
+      <div class="msg me" data-autor="daniela">Mandei junto com o pedido. É no quarto, uns 2 m².<span class="h">11:42</span></div>
+      <div class="msg" data-autor="wagner">Vi aqui. Já te enviei a proposta com o valor, com material incluso.<span class="h">11:48</span></div>
+    </div>
+  </main>
+
+  <form class="composer" id="form">
+    <label class="sr" for="texto">Mensagem</label>
+    <input class="in" id="texto" type="text" placeholder="Escreva uma mensagem" autocomplete="off">
+    <button type="submit" aria-label="Enviar"><i data-i="enviar" class="s"></i></button>
+  </form>
+</div>
+<script src="assets/app.js"></script>
+<script>
+// ?lado=prestador mostra a mesma conversa do ponto de vista do Wagner
+var prestador = App.lado === 'prestador';
+if (prestador) {
+  document.getElementById('avOutro').textContent = 'DS';
+  document.getElementById('avOutro').className = 'av c';
+  document.getElementById('nomeOutro').textContent = 'Daniela S.';
+  document.getElementById('subOutro').textContent = 'Cliente · Aldeota';
+  document.querySelector('.back').setAttribute('href', 'prestador-servico.html');
+  document.querySelectorAll('.msg').forEach(function (m) { m.classList.toggle('me', m.dataset.autor === 'wagner'); });
+}
+document.getElementById('form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var i = document.getElementById('texto');
+  if (!i.value.trim()) return;
+  var d = new Date();
+  var div = document.createElement('div');
+  div.className = 'msg me';
+  div.textContent = i.value.trim();
+  var h = document.createElement('span'); h.className = 'h';
+  h.textContent = String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+  div.appendChild(h);
+  document.getElementById('msgs').appendChild(div);
+  i.value = '';
+  var sc = document.querySelector('.scroll'); sc.scrollTop = sc.scrollHeight;
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F5F5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Agenda e alcance · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{"dias": [1, 2, 3, 4, 5, 6], "per": ["Tarde", "Noite"], "urg": true, "raio": 8, "novo": false, "salvo": false}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <header class="top">
+    <a class="back" href="prestador-evidencias.html" data-back aria-label="Voltar" data-show="novo"><i data-i="voltar"></i></a>
+    <div style="flex: 1; padding-right: 8px" data-show="novo">
+      <p class="small muted strong" style="margin-bottom: 6px">Passo 3 de 3 · Agenda</p>
+      <div class="steps" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span></div>
+    </div>
+    <h1 class="title" data-show="!novo" style="padding-left: 8px; font-size: 24px">Agenda</h1>
+  </header>
+
+  <main class="scroll">
+    <h1 class="h1" data-show="novo">Quando e onde<br>você atende?</h1>
+    <p class="lead">Você só recebe pedidos que cabem na sua agenda. Dá para mudar quando quiser.</p>
+
+    <h2 class="h2" style="margin-bottom: 2px">Dias da semana</h2>
+    <p class="hint" style="margin-bottom: 12px" data-text="diasTxt"></p>
+    <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px" role="group" aria-label="Dias da semana">
+      <button type="button" class="chip" style="justify-content: center; padding: 0" data-toggle="dias:0" data-on="dias~0" aria-label="Domingo">D</button>
+      <button type="button" class="chip" style="justify-content: center; padding: 0" data-toggle="dias:1" data-on="dias~1" aria-label="Segunda">S</button>
+      <button type="button" class="chip" style="justify-content: center; padding: 0" data-toggle="dias:2" data-on="dias~2" aria-label="Terça">T</button>
+      <button type="button" class="chip" style="justify-content: center; padding: 0" data-toggle="dias:3" data-on="dias~3" aria-label="Quarta">Q</button>
+      <button type="button" class="chip" style="justify-content: center; padding: 0" data-toggle="dias:4" data-on="dias~4" aria-label="Quinta">Q</button>
+      <button type="button" class="chip" style="justify-content: center; padding: 0" data-toggle="dias:5" data-on="dias~5" aria-label="Sexta">S</button>
+      <button type="button" class="chip" style="justify-content: center; padding: 0" data-toggle="dias:6" data-on="dias~6" aria-label="Sábado">S</button>
+    </div>
+
+    <section class="sec">
+      <h2 class="h2">Horários</h2>
+      <div class="opts" role="group" aria-label="Períodos">
+        <button type="button" class="opt" style="padding: 12px 14px" data-toggle="per:Manhã" data-on="per~Manhã"><span class="tx"><span class="t">Manhã</span><span class="d">7h às 12h</span></span><span class="mark sq"><i data-i="check"></i></span></button>
+        <button type="button" class="opt" style="padding: 12px 14px" data-toggle="per:Tarde" data-on="per~Tarde"><span class="tx"><span class="t">Tarde</span><span class="d">12h às 18h</span></span><span class="mark sq"><i data-i="check"></i></span></button>
+        <button type="button" class="opt" style="padding: 12px 14px" data-toggle="per:Noite" data-on="per~Noite"><span class="tx"><span class="t">Noite</span><span class="d">18h às 21h</span></span><span class="mark sq"><i data-i="check"></i></span></button>
+      </div>
+    </section>
+
+    <div class="group sec">
+      <button type="button" class="row" role="switch" data-toggle="urg" data-on="urg">
+        <span class="badge"><i data-i="raio"></i></span>
+        <span class="grow"><span class="t">Aceito pedidos urgentes</span><span class="d">Urgências pagam um valor maior</span></span>
+        <span class="switch"></span>
+      </button>
+    </div>
+
+    <section class="sec">
+      <h2 class="h2"><label for="base">Bairro de onde você sai</label></h2>
+      <input class="in" id="base" type="text" placeholder="Ex.: Montese" value="Montese">
+    </section>
+
+    <section class="sec">
+      <h2 class="h2" style="margin-bottom: 2px">Até onde você vai?</h2>
+      <p class="hint" style="margin-bottom: 12px">Distância máxima a partir do seu bairro. Só aparecem pedidos dentro dela.</p>
+      <div class="grid4" role="group" aria-label="Raio de atendimento">
+        <button type="button" class="chip" style="justify-content: center" data-set="raio=3" data-on="raio=3">3 km</button>
+        <button type="button" class="chip" style="justify-content: center" data-set="raio=5" data-on="raio=5">5 km</button>
+        <button type="button" class="chip" style="justify-content: center" data-set="raio=8" data-on="raio=8">8 km</button>
+        <button type="button" class="chip" style="justify-content: center" data-set="raio=15" data-on="raio=15">15 km</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot" data-show="novo">
+    <a class="btn" href="prestador-inicio.html">Concluir cadastro</a>
+  </footer>
+  <footer class="foot" data-show="!novo" hidden style="padding-bottom: 12px">
+    <button type="button" class="btn" data-set="salvo=true" data-show="!salvo">Salvar agenda</button>
+    <p class="note-box ok" data-show="salvo" hidden style="justify-content: center"><i data-i="check" class="s"></i>Agenda salva</p>
+  </footer>
+  <div data-show="!novo" hidden><nav class="tabbar" aria-label="Navegação do prestador">
+    <a href="prestador-inicio.html"><i data-i="casa"></i>Início</a>
+    <a href="prestador-agenda.html" aria-current="page"><i data-i="calendario"></i>Agenda</a>
+    <a href="prestador-ganhos.html"><i data-i="dinheiro"></i>Ganhos</a>
+    <a href="prestador-perfil.html"><i data-i="user"></i>Perfil</a>
+  </nav></div>
+</div>
+<script src="assets/app.js"></script>
+<script>
+App.computed = function (s) { var n = s.dias.length; return { diasTxt: n === 0 ? 'Nenhum dia escolhido' : n + (n === 1 ? ' dia por semana' : ' dias por semana') }; };
+</script>
+</body>
+</html>

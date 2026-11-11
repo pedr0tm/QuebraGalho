@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#EC6F2D">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Wagner Lima · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{"aba": "sobre", "fav": false, "den": "", "motivo": "falsas", "dono": false}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <main class="scroll flush">
+    <div class="hero between" style="align-items: flex-start; height: calc(108px + env(safe-area-inset-top)); padding-top: calc(12px + env(safe-area-inset-top)); padding-left: 12px; padding-right: 12px">
+      <a class="icon-btn" style="border: 0" href="busca.html" data-back aria-label="Voltar"><i data-i="voltar"></i></a>
+      <button type="button" class="icon-btn" style="border: 0; color: var(--laranja-forte)" data-toggle="fav" data-on="fav" data-show="!dono" aria-label="Salvar nos favoritos"><i data-i="coracao" id="favIc"></i></button>
+    </div>
+
+    <div class="pad" style="margin-top: -42px">
+      <span class="av l" aria-hidden="true" style="border: 4px solid var(--cinza)">WL</span>
+      <h1 class="h1 hstack" style="margin-top: 10px; gap: 6px; font-size: 26px">Wagner Lima <i data-i="escudo" class="verif" aria-label="Perfil verificado"></i></h1>
+      <p class="muted">Pintor · Gesseiro · Marceneiro</p>
+      <p style="margin-top: 10px"><span class="tag ok" style="font-size: 13px; padding: 5px 10px">Disponível hoje · responde em cerca de 1h</span></p>
+
+      <div class="note-box" style="margin-top: 14px" data-show="dono" hidden><i data-i="olho" class="s"></i><span>É assim que os clientes veem seu perfil.</span></div>
+
+      <div class="grid3" style="margin-top: 16px">
+        <div class="stat"><p class="v hstack" style="gap: 4px"><i data-i="estrela" class="s" style="color: var(--laranja)"></i>4,9</p><p class="l">37 avaliações</p></div>
+        <div class="stat"><p class="v">64</p><p class="l">serviços feitos</p></div>
+        <div class="stat"><p class="v">2,1 km</p><p class="l">de você</p></div>
+      </div>
+
+      <div class="seg" role="tablist" aria-label="Seções do perfil" style="margin-top: 22px">
+        <button type="button" role="tab" data-set="aba=sobre" data-on="aba=sobre">Sobre</button>
+        <button type="button" role="tab" data-set="aba=fotos" data-on="aba=fotos">Trabalhos</button>
+        <button type="button" role="tab" data-set="aba=aval" data-on="aba=aval">Avaliações</button>
+      </div>
+
+      <section data-show="aba=sobre" style="margin-top: 18px">
+        <p style="font-size: 15px">Trabalho com pintura, gesso e pequenos reparos em madeira há 12 anos. Deixo tudo limpo no fim do dia e combino o preço antes de começar.</p>
+        <h2 class="h2 sec">Comprovações</h2>
+        <div class="group">
+          <div class="row"><i data-i="doc-ok" style="color: var(--ok)"></i><span class="grow">Documento de identidade</span><span class="tag ok">Verificado</span></div>
+          <div class="row"><i data-i="doc-ok" style="color: var(--ok)"></i><span class="grow">Certificado de trabalho em altura</span><span class="tag ok">Verificado</span></div>
+          <div class="row"><i data-i="doc" class="muted"></i><span class="grow">Cadastro MEI</span><span class="tag">Em análise</span></div>
+        </div>
+        <h2 class="h2 sec">Preços de referência</h2>
+        <div class="group">
+          <div class="row"><span class="grow">Visita para orçamento</span><b>R$ 90</b></div>
+          <div class="row"><span class="grow">Pintura de cômodo (até 12 m²)</span><b>a partir de R$ 450</b></div>
+          <div class="row"><span class="grow">Reparo em forro de gesso</span><b>a partir de R$ 180</b></div>
+        </div>
+        <h2 class="h2 sec">Onde atende</h2>
+        <p class="hstack" style="align-items: flex-start; gap: 8px; font-size: 15px"><i data-i="pin" class="s" style="color: var(--laranja-forte); margin-top: 2px"></i>Aldeota, Meireles, Varjota e Dionísio Torres · até 8 km</p>
+        <button type="button" class="btn-quiet" style="justify-content: flex-start; padding: 0; margin-top: 18px; color: var(--texto-2); font-size: 14px" data-set="den=form" data-show="!dono"><i data-i="bandeira" class="s"></i>Denunciar perfil</button>
+      </section>
+
+      <section data-show="aba=fotos" hidden style="margin-top: 18px">
+        <div class="grid2">
+          <div class="ph warm">[FOTO] Sala pintada</div>
+          <div class="ph">[FOTO] Forro de gesso</div>
+          <div class="ph">[FOTO] Porta restaurada</div>
+          <div class="ph warm">[FOTO] Fachada</div>
+        </div>
+        <p class="small muted" style="margin-top: 10px">Fotos enviadas pelo profissional e por clientes depois do serviço.</p>
+      </section>
+
+      <section data-show="aba=aval" hidden style="margin-top: 18px">
+        <div class="hstack" style="gap: 18px; margin-bottom: 16px">
+          <div style="text-align: center"><p class="num" style="font-size: 40px; line-height: 1">4,9</p><p class="small muted">37 avaliações</p></div>
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 6px; font-size: 13px">
+            <div class="hstack" style="gap: 8px"><span style="width: 10px">5</span><div class="bar" style="flex: 1"><span style="width: 89%"></span></div></div>
+            <div class="hstack" style="gap: 8px"><span style="width: 10px">4</span><div class="bar" style="flex: 1"><span style="width: 8%"></span></div></div>
+            <div class="hstack" style="gap: 8px"><span style="width: 10px">3</span><div class="bar" style="flex: 1"><span style="width: 3%"></span></div></div>
+            <div class="hstack" style="gap: 8px"><span style="width: 10px">2</span><div class="bar" style="flex: 1"><span style="width: 0%"></span></div></div>
+            <div class="hstack" style="gap: 8px"><span style="width: 10px">1</span><div class="bar" style="flex: 1"><span style="width: 0%"></span></div></div>
+          </div>
+        </div>
+        <div class="stack">
+          <div class="card"><p class="between small"><b>Carla M.</b><span class="muted">há 2 semanas</span></p><p style="margin-top: 6px; font-size: 15px">Chegou no horário, protegeu os móveis e a parede ficou impecável. Já chamei de novo.</p></div>
+          <div class="card"><p class="between small"><b>Jorge S.</b><span class="muted">há 1 mês</span></p><p style="margin-top: 6px; font-size: 15px">Preço combinado foi o preço cobrado. Recomendo.</p></div>
+        </div>
+        <button type="button" class="btn-quiet" style="justify-content: flex-start; padding: 0; margin-top: 12px; color: var(--texto-2); font-size: 14px" data-set="den=form" data-show="!dono"><i data-i="bandeira" class="s"></i>Viu algo errado? Denunciar avaliação</button>
+      </section>
+      <div style="height: 8px"></div>
+    </div>
+  </main>
+
+  <footer class="foot" data-show="!dono" style="flex-direction: row; gap: 10px">
+    <a class="icon-btn" href="mensagens.html" aria-label="Enviar mensagem para Wagner" style="width: 52px; height: 52px"><i data-i="chat"></i></a>
+    <a class="btn" href="solicitar.html">Solicitar serviço</a>
+  </footer>
+  <footer class="foot" data-show="dono" hidden>
+    <a class="btn-sec" href="prestador-cadastro.html"><i data-i="lapis" class="s"></i>Editar perfil</a>
+  </footer>
+
+  <div class="sheet-bg" data-show="den" hidden>
+    <button type="button" class="scrim" data-set="den=" aria-label="Fechar"></button>
+    <div class="sheet" role="dialog" aria-modal="true" aria-label="Denunciar">
+      <div class="grip"></div>
+      <div data-show="den=form">
+        <h2 class="h2" style="font-size: 20px; margin-bottom: 4px">O que aconteceu?</h2>
+        <p class="small muted" style="margin-bottom: 14px">Sua denúncia é anônima e vai para a moderação.</p>
+        <div class="opts" role="radiogroup" aria-label="Motivo" style="margin-bottom: 18px">
+          <button type="button" class="opt" role="radio" style="padding: 12px 14px" data-set="motivo=falsas" data-on="motivo=falsas"><span class="tx t" style="font-size: 15px">Informações falsas</span><span class="mark"></span></button>
+          <button type="button" class="opt" role="radio" style="padding: 12px 14px" data-set="motivo=comport" data-on="motivo=comport"><span class="tx t" style="font-size: 15px">Comportamento inadequado</span><span class="mark"></span></button>
+          <button type="button" class="opt" role="radio" style="padding: 12px 14px" data-set="motivo=golpe" data-on="motivo=golpe"><span class="tx t" style="font-size: 15px">Golpe ou cobrança indevida</span><span class="mark"></span></button>
+          <button type="button" class="opt" role="radio" style="padding: 12px 14px" data-set="motivo=outro" data-on="motivo=outro"><span class="tx t" style="font-size: 15px">Outro motivo</span><span class="mark"></span></button>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 10px">
+          <button type="button" class="btn-sec" data-set="den=">Cancelar</button>
+          <button type="button" class="btn" data-set="den=ok">Enviar denúncia</button>
+        </div>
+      </div>
+      <div data-show="den=ok" hidden>
+        <h2 class="h2" style="font-size: 20px">Denúncia recebida</h2>
+        <p class="muted" style="margin-bottom: 18px">Obrigado por avisar. A moderação vai analisar e tomar as medidas necessárias.</p>
+        <button type="button" class="btn-dark" data-set="den=">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="assets/app.js"></script>
+<script>
+App.after = function (c) { var f = document.querySelector('#favIc, [aria-label="Salvar nos favoritos"] svg'); if (f) f.style.fill = c.fav ? 'currentColor' : 'none'; };
+</script>
+</body>
+</html>

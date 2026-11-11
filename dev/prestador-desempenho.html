@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F5F5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Seu desempenho · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{"per": 30}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <header class="top">
+    <a class="back" href="prestador-perfil.html" data-back aria-label="Voltar"><i data-i="voltar"></i></a>
+    <h1 class="title">Seu desempenho</h1>
+  </header>
+
+  <main class="scroll">
+    <div class="seg" role="group" aria-label="Período" style="margin-bottom: 14px">
+      <button type="button" data-set="per=7" data-on="per=7">7 dias</button>
+      <button type="button" data-set="per=30" data-on="per=30">30 dias</button>
+      <button type="button" data-set="per=90" data-on="per=90">90 dias</button>
+    </div>
+
+    <div class="grid2">
+      <div class="stat"><p class="v" data-text="views"></p><p class="l">visitas ao seu perfil</p></div>
+      <div class="stat"><p class="v" data-text="pedidos"></p><p class="l">pedidos recebidos</p></div>
+      <div class="stat"><p class="v" data-text="aceiteTxt"></p><p class="l">pedidos aceitos</p></div>
+      <div class="stat"><p class="v" data-text="ganhos"></p><p class="l">ganhos brutos</p></div>
+    </div>
+
+    <section class="sec">
+      <h2 class="h2">Do perfil ao serviço feito</h2>
+      <div class="card stack" style="gap: 12px">
+        <div><div class="between small" style="margin-bottom: 6px"><span>Visitas ao perfil</span><b data-text="views"></b></div><div class="bar"><span style="background: var(--laranja-medio); width: 100%"></span></div></div>
+        <div><div class="between small" style="margin-bottom: 6px"><span>Pedidos recebidos</span><b data-text="pedidos"></b></div><div class="bar"><span data-width="wPed"></span></div></div>
+        <div><div class="between small" style="margin-bottom: 6px"><span>Propostas aceitas</span><b data-text="aceitos"></b></div><div class="bar"><span data-width="wAce"></span></div></div>
+        <div><div class="between small" style="margin-bottom: 6px"><span>Serviços concluídos</span><b data-text="feitos"></b></div><div class="bar"><span style="background: var(--laranja-forte)" data-width="wFei"></span></div></div>
+        <p class="hint">De cada 10 pessoas que veem seu perfil, cerca de <b data-text="conv"></b> fazem um pedido.</p>
+      </div>
+    </section>
+
+    <section class="sec">
+      <h2 class="h2">Para receber mais pedidos</h2>
+      <div class="group">
+        <a class="row" href="prestador-evidencias.html?editar=true"><span class="badge"><i data-i="camera"></i></span><span class="grow"><span class="t">Adicione mais 1 foto de trabalho</span><span class="d">Perfis com 4 fotos ou mais aparecem antes na busca</span></span><i data-i="chev" class="s chev"></i></a>
+        <a class="row" href="prestador-agenda.html"><span class="badge"><i data-i="calendario"></i></span><span class="grow"><span class="t">Abra horários pela manhã</span><span class="d">Muitos pedidos de pintura na sua região são de manhã</span></span><i data-i="chev" class="s chev"></i></a>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="assets/app.js"></script>
+<script>
+var D = {
+  7: { views: 46, pedidos: 6, aceitos: 5, feitos: 3, ganhos: 'R$ 1.130' },
+  30: { views: 210, pedidos: 24, aceitos: 19, feitos: 15, ganhos: 'R$ 4.860' },
+  90: { views: 590, pedidos: 63, aceitos: 50, feitos: 44, ganhos: 'R$ 13.200' }
+};
+App.computed = function (s) {
+  var d = D[s.per], w = function (v) { return Math.max(3, Math.round(v / d.views * 100)); };
+  return { views: d.views, pedidos: d.pedidos, aceitos: d.aceitos, feitos: d.feitos, ganhos: d.ganhos, aceiteTxt: d.aceitos + ' de ' + d.pedidos,
+    wPed: w(d.pedidos), wAce: w(d.aceitos), wFei: w(d.feitos), conv: Math.max(1, Math.round(d.pedidos / d.views * 10)) };
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "Quebra Galho",
+  "short_name": "Quebra Galho",
+  "description": "Conecta quem precisa de um serviço a quem sabe fazer.",
+  "lang": "pt-BR",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F5F5F5",
+  "theme_color": "#EC6F2D",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

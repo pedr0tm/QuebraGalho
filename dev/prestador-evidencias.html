@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F5F5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Evidências · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{"fotos": 2, "falhou": true, "docs": [], "editar": false}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <header class="top">
+    <a class="back" href="prestador-cadastro.html" data-back aria-label="Voltar"><i data-i="voltar"></i></a>
+    <div style="flex: 1; padding-right: 8px" data-show="!editar">
+      <p class="small muted strong" style="margin-bottom: 6px">Passo 2 de 3 · Evidências</p>
+      <div class="steps" aria-hidden="true"><span class="on"></span><span class="on"></span><span></span></div>
+    </div>
+    <h1 class="title" data-show="editar" hidden>Fotos e comprovações</h1>
+  </header>
+
+  <main class="scroll">
+    <h1 class="h1" data-show="!editar">Mostre seu<br>trabalho</h1>
+    <p class="lead">Fotos e comprovações passam confiança. Quem tem, recebe mais pedidos.</p>
+
+    <h2 class="h2" style="margin-bottom: 2px">Fotos de trabalhos</h2>
+    <p class="hint" style="margin-bottom: 12px"><span data-text="fotosTxt"></span> · recomendamos pelo menos 4</p>
+    <div class="grid3">
+      <div class="ph warm">[FOTO] Sala</div>
+      <div class="ph warm">[FOTO] Forro</div>
+      <div class="ph warm" data-show="f3" hidden>[FOTO] Cozinha</div>
+      <div class="ph warm" data-show="f4" hidden>[FOTO] Fachada</div>
+      <div class="ph warm" data-show="f5" hidden>[FOTO] Porta</div>
+      <button type="button" class="ph-add" style="border-color: var(--erro); color: var(--erro); font-weight: 700" data-show="falhou" data-set="falhou=false" data-add="fotos:1"><i data-i="recarregar"></i>Não enviou. Tentar de novo</button>
+      <button type="button" class="ph-add" data-add="fotos:1" data-max="5" data-show="!f5"><i data-i="plus"></i>Adicionar foto</button>
+    </div>
+    <p class="hint" role="status" style="margin-top: 8px" data-show="falhou">Uma foto não foi enviada por falha de conexão. As outras já estão salvas.</p>
+
+    <section class="sec">
+      <h2 class="h2" style="margin-bottom: 2px">Comprovações</h2>
+      <p class="hint" style="margin-bottom: 12px">No perfil aparece só o selo de verificado. Seus documentos não ficam públicos.</p>
+      <div class="group">
+        <div class="row"><i data-i="doc-ok" style="color: var(--ok)"></i><span class="grow"><span class="t">Documento de identidade</span><span class="d">Obrigatório</span></span><span class="tag ok">Enviado</span></div>
+        <div class="row"><i data-i="doc" class="muted"></i><span class="grow"><span class="t">Certificado de curso ou NR</span><span class="d">Opcional · ex.: trabalho em altura</span></span><span class="tag ok" data-show="docs~cert" hidden>Enviado</span><button type="button" class="btn-sec inline" data-show="!docs~cert" data-toggle="docs:cert">Adicionar</button></div>
+        <div class="row"><i data-i="doc" class="muted"></i><span class="grow"><span class="t">Cadastro MEI</span><span class="d">Opcional</span></span><span class="tag ok" data-show="docs~mei" hidden>Enviado</span><button type="button" class="btn-sec inline" data-show="!docs~mei" data-toggle="docs:mei">Adicionar</button></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <a class="btn" href="prestador-agenda.html?novo=true" data-show="!editar">Salvar e continuar</a>
+    <a class="btn-quiet" href="prestador-agenda.html?novo=true" data-show="!editar">Fazer isso depois</a>
+    <a class="btn" href="prestador-perfil.html" data-show="editar" hidden>Salvar</a>
+  </footer>
+</div>
+<script src="assets/app.js"></script>
+<script>
+App.computed = function (s) {
+  return { f3: s.fotos >= 3, f4: s.fotos >= 4, f5: s.fotos >= 5, fotosTxt: s.fotos + (s.fotos === 1 ? ' foto enviada' : ' fotos enviadas') };
+};
+</script>
+</body>
+</html>

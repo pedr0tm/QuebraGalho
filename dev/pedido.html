@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F5F5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Acompanhar pedido · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{"passo": 1, "recusado": false}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <header class="top">
+    <a class="back" href="pedidos.html" aria-label="Voltar para meus pedidos"><i data-i="voltar"></i></a>
+    <h1 class="title">Pedido</h1>
+  </header>
+
+  <main class="scroll">
+    <div class="hstack" style="gap: 14px; margin-top: 4px">
+      <span class="badge" style="width: 52px; height: 52px; background: var(--laranja); color: #fff"><i data-i="check" class="l"></i></span>
+      <div>
+        <p class="h1" style="font-size: 24px; margin: 0" data-text="titulo"></p>
+        <p class="muted" data-text="subtitulo"></p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 20px">
+      <div class="hstack" style="padding-bottom: 12px; border-bottom: 1px solid var(--linha)">
+        <span class="av" aria-hidden="true">WL</span>
+        <span style="flex: 1"><span class="strong" style="display: block">Wagner Lima</span><span class="small muted">Pintura · infiltração no teto</span></span>
+        <a href="mensagens.html" class="icon-btn" aria-label="Mensagens com Wagner"><i data-i="chat" class="s"></i></a>
+      </div>
+      <div class="grid2" style="padding-top: 12px; font-size: 14px">
+        <div><p class="muted">Quando</p><p class="strong">Qui, 6 · noite</p></div>
+        <div><p class="muted">Onde</p><p class="strong">Aldeota</p></div>
+      </div>
+    </div>
+
+    <h2 class="h2 sec">Andamento</h2>
+    <ol class="tl" id="tl">
+      <li><span class="rail"><span class="dot"></span><span class="line"></span></span><div class="body"><p class="t">Pedido enviado</p><p class="d">Hoje, 11:20</p></div></li>
+      <li><span class="rail"><span class="dot"></span><span class="line"></span></span><div class="body"><p class="t" data-text="t2"></p><p class="d" data-text="d2"></p></div></li>
+      <li><span class="rail"><span class="dot"></span><span class="line"></span></span><div class="body"><p class="t" data-text="t3"></p><p class="d" data-text="d3"></p></div></li>
+      <li><span class="rail"><span class="dot"></span><span class="line"></span></span><div class="body"><p class="t">Serviço marcado</p><p class="d">Qui, 6 · a partir das 18h</p></div></li>
+    </ol>
+
+    <div class="card dark" data-show="passo=2" hidden>
+      <p class="small muted">Proposta do Wagner</p>
+      <p class="num" style="font-size: 30px; margin-top: 2px">R$ 420</p>
+      <p class="small muted" style="margin-top: 4px">Raspagem, selador e duas demãos no teto do quarto. Material incluso. Você paga só depois de confirmar a conclusão.</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px">
+        <button type="button" class="btn-sec" style="background: transparent; color: #fff; border-color: #6E6964" data-set="passo=3&recusado=true">Recusar</button>
+        <button type="button" class="btn" style="background: var(--laranja); color: var(--grafite)" data-set="passo=3">Aceitar</button>
+      </div>
+    </div>
+
+    <a class="card hl hstack" href="conclusao.html" data-show="passo=3&!recusado" hidden style="gap: 14px">
+      <span class="badge"><i data-i="check"></i></span>
+      <span style="flex: 1"><span class="strong" style="display: block">O Wagner terminou o serviço</span><span class="small muted">Confira e confirme a conclusão</span></span>
+      <i data-i="chev" class="s chev"></i>
+    </a>
+    <a class="btn" href="busca.html" data-show="recusado" hidden>Buscar outro profissional</a>
+
+    <button type="button" class="demo" data-show="passo=1" data-set="passo=2">Simular resposta do profissional</button>
+  </main>
+
+  <nav class="tabbar" aria-label="Navegação principal">
+    <a href="inicio.html"><i data-i="casa"></i>Início</a>
+    <a href="busca.html"><i data-i="busca"></i>Buscar</a>
+    <a href="pedidos.html" aria-current="page"><i data-i="pedidos"></i>Pedidos</a>
+    <a href="conta.html"><i data-i="user"></i>Conta</a>
+  </nav>
+</div>
+<script src="assets/app.js"></script>
+<script>
+App.computed = function (s) {
+  var p = s.passo, r = s.recusado;
+  return {
+    titulo: p >= 3 ? (r ? 'Proposta recusada' : 'Serviço marcado') : 'Pedido enviado',
+    subtitulo: p >= 3 ? (r ? 'Que tal ver outros profissionais?' : 'Wagner vai até você na quinta à noite.') : 'Avisamos assim que o Wagner responder.',
+    t2: p >= 2 ? 'Wagner respondeu' : 'Aguardando resposta',
+    d2: p >= 2 ? 'Hoje, 11:48' : 'Wagner costuma responder em 1h',
+    t3: r ? 'Proposta recusada' : 'Valor combinado',
+    d3: r ? 'Você pode buscar outro profissional' : (p >= 3 ? 'R$ 420 · você aceitou' : 'Você aceita ou recusa a proposta')
+  };
+};
+App.after = function (c) {
+  document.querySelectorAll('#tl li').forEach(function (li, i) {
+    var done = i < c.passo || (c.passo >= 3 && i === 3 && !c.recusado);
+    li.className = done ? 'done' : (i === c.passo ? 'now' : '');
+  });
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#252525">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Início do prestador · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{"ativo": true}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <main class="scroll flush">
+    <header class="dark-zone">
+      <div class="hstack">
+        <img src="assets/logo.png" alt="" width="40" height="40" style="border-radius: 10px">
+        <div style="flex: 1"><p class="small muted">Bom dia,</p><p class="num" style="font-size: 21px; line-height: 1.1">Wagner</p></div>
+        <a class="icon-btn" href="prestador-notificacoes.html" aria-label="Notificações, 3 novas" style="background: var(--grafite-2); border: 0; color: #fff"><i data-i="sino"></i><span class="dot-new" style="background: var(--laranja); border-color: var(--grafite-2)"></span></a>
+      </div>
+
+      <button type="button" class="row" role="switch" data-toggle="ativo" data-on="ativo" style="margin-top: 16px; padding: 12px 14px; border-radius: var(--r-l); background: var(--grafite-2); color: #fff; border: 0">
+        <span style="width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0" id="luz"></span>
+        <span class="grow"><span class="t" data-text="stTitulo"></span><span class="d" style="color: #CFC8C1" data-text="stDesc"></span></span>
+        <span class="switch"></span>
+      </button>
+
+      <div class="grid3" style="margin-top: 10px">
+        <div class="stat"><p class="v">3</p><p class="l">serviços na semana</p></div>
+        <a class="stat" href="prestador-perfil.html" style="color: #fff; text-decoration: none; font-weight: 400"><p class="v hstack" style="gap: 4px">4,9 <i data-i="chev" class="xs"></i></p><p class="l">sua nota</p></a>
+        <div class="stat"><p class="v">1h</p><p class="l">para responder</p></div>
+      </div>
+    </header>
+
+    <div class="pad" style="margin-top: 18px">
+      <a class="card hstack" href="prestador-evidencias.html?editar=true" style="gap: 14px; background: var(--laranja-claro)">
+        <span style="width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center; background: conic-gradient(var(--laranja-forte) 0 70%, var(--laranja-medio) 70% 100%)"><span style="width: 36px; height: 36px; border-radius: 50%; background: var(--laranja-claro); display: grid; place-items: center; font-size: 12px; font-weight: 800">70%</span></span>
+        <span style="flex: 1"><span class="strong" style="display: block">Complete seu perfil</span><span class="small">Perfis com fotos de trabalhos recebem mais pedidos.</span></span>
+        <i data-i="chev" class="s" style="color: var(--laranja-escuro)"></i>
+      </a>
+    </div>
+
+    <section class="pad sec">
+      <h2 class="h2 hstack" style="gap: 8px">Oportunidades para você <span class="tag solid">2</span></h2>
+      <div class="stack">
+        <a class="card" href="prestador-pedido.html">
+          <div class="between"><span class="tag warm"><i data-i="raio" class="xs"></i>Urgente · hoje</span><span class="small muted">há 12 min</span></div>
+          <p class="strong" style="margin-top: 10px; font-size: 17px">Infiltração no teto do quarto</p>
+          <p class="small muted">Pintura · Daniela S. · Aldeota, 4,3 km</p>
+          <p class="hstack small" style="gap: 4px; margin-top: 8px; color: var(--ok); font-weight: 700"><i data-i="check" class="xs"></i>Combina com seus serviços, raio e horário</p>
+        </a>
+        <a class="card" href="prestador-pedido.html">
+          <div class="between"><span class="tag">Agendado · sáb, 8 · manhã</span><span class="small muted">há 1h</span></div>
+          <p class="strong" style="margin-top: 10px; font-size: 17px">Rebaixar teto da sala com gesso</p>
+          <p class="small muted">Gesso · Paulo R. · Meireles, 5,0 km</p>
+          <p class="hstack small" style="gap: 4px; margin-top: 8px; color: var(--ok); font-weight: 700"><i data-i="check" class="xs"></i>Combina com seus serviços e raio</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="pad sec">
+      <h2 class="h2">Próximo na agenda</h2>
+      <a class="card hstack" href="prestador-servico.html" style="gap: 14px">
+        <div style="text-align: center; width: 46px"><p class="small strong" style="color: var(--laranja-forte)">SEX</p><p class="num" style="font-size: 26px; line-height: 1">7</p></div>
+        <div style="flex: 1; border-left: 1px solid var(--linha); padding-left: 14px">
+          <p class="strong">Pintura da varanda</p>
+          <p class="small muted">14h · Ana P. · Varjota</p>
+          <p class="small" style="margin-top: 4px"><span class="muted">Combinado:</span> <b>R$ 380</b></p>
+        </div>
+        <i data-i="chev" class="s chev"></i>
+      </a>
+    </section>
+  </main>
+  <nav class="tabbar" aria-label="Navegação do prestador">
+    <a href="prestador-inicio.html" aria-current="page"><i data-i="casa"></i>Início</a>
+    <a href="prestador-agenda.html"><i data-i="calendario"></i>Agenda</a>
+    <a href="prestador-ganhos.html"><i data-i="dinheiro"></i>Ganhos</a>
+    <a href="prestador-perfil.html"><i data-i="user"></i>Perfil</a>
+  </nav>
+</div>
+<script src="assets/app.js"></script>
+<script>
+App.computed = function (s) {
+  return { stTitulo: s.ativo ? 'Recebendo pedidos' : 'Pausado', stDesc: s.ativo ? 'Você aparece nas buscas da sua região' : 'Você não aparece nas buscas agora' };
+};
+App.after = function (c) { document.getElementById('luz').style.background = c.ativo ? '#4CC38A' : '#8A847E'; };
+</script>
+</body>
+</html>

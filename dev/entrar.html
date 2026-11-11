@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F5F5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Entrar · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{"tipo": "contratante"}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <header class="top">
+    <a class="back" href="index.html" data-back aria-label="Voltar"><i data-i="voltar"></i></a>
+  </header>
+
+  <main class="scroll">
+    <img src="assets/logo.png" alt="Quebra Galho" width="60" height="60" style="border-radius: 15px">
+    <h1 class="h1" style="margin-top: 20px">Que bom te ver<br>de novo</h1>
+    <p class="lead">Entre para continuar de onde parou.</p>
+
+    <div class="seg" role="group" aria-label="Entrar como" style="margin-bottom: 20px">
+      <button type="button" data-set="tipo=contratante" data-on="tipo=contratante">Contratante</button>
+      <button type="button" data-set="tipo=prestador" data-on="tipo=prestador">Prestador</button>
+    </div>
+
+    <form class="fields" onsubmit="return false">
+      <div class="field"><label class="lbl" for="login">E-mail ou celular</label><input class="in" id="login" type="text" placeholder="voce@email.com" autocomplete="username"></div>
+      <div class="field"><label class="lbl" for="pw">Senha</label><input class="in" id="pw" type="password" placeholder="Sua senha" autocomplete="current-password"></div>
+      <a href="esqueci-senha.html" style="align-self: flex-end; font-size: 15px; padding: 6px 0">Esqueci minha senha</a>
+    </form>
+  </main>
+
+  <footer class="foot" style="border-top: 0; background: transparent">
+    <a class="btn" href="inicio.html" data-show="tipo=contratante">Entrar</a>
+    <a class="btn" href="prestador-inicio.html" data-show="tipo=prestador" hidden>Entrar</a>
+    <p class="note" style="font-size: 15px">Ainda não tem conta? <a href="index.html">Criar conta</a></p>
+  </footer>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

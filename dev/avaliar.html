@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F5F5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Avaliar serviço · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{"nota": 0, "tags": [], "st": "aberto", "prof": "wagner"}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <header class="top">
+    <a class="back" href="pagamento.html" data-back aria-label="Voltar"><i data-i="voltar"></i></a>
+    <h1 class="title">Avaliar serviço</h1>
+  </header>
+
+  <main class="scroll">
+    <div data-show="st=aberto">
+      <div style="text-align: center; padding: 6px 0 20px">
+        <span class="av l" style="margin: 0 auto" aria-hidden="true" data-text="ini"></span>
+        <h2 class="h1" style="margin-top: 12px; font-size: 24px">Como foi com <span data-text="nome"></span>?</h2>
+        <p class="muted" data-text="servico"></p>
+        <div class="stars" role="radiogroup" aria-label="Nota de 1 a 5" style="margin-top: 16px">
+          <button type="button" role="radio" data-set="nota=1" data-on="nota=1" aria-label="1 estrela, muito ruim"><i data-i="estrela"></i></button>
+          <button type="button" role="radio" data-set="nota=2" data-on="nota=2" aria-label="2 estrelas, ruim"><i data-i="estrela"></i></button>
+          <button type="button" role="radio" data-set="nota=3" data-on="nota=3" aria-label="3 estrelas, ok"><i data-i="estrela"></i></button>
+          <button type="button" role="radio" data-set="nota=4" data-on="nota=4" aria-label="4 estrelas, bom"><i data-i="estrela"></i></button>
+          <button type="button" role="radio" data-set="nota=5" data-on="nota=5" aria-label="5 estrelas, excelente"><i data-i="estrela"></i></button>
+        </div>
+        <p class="strong" aria-live="polite" style="margin-top: 6px; min-height: 22px" data-text="notaTxt"></p>
+      </div>
+
+      <h3 class="h2">O que se destacou?</h3>
+      <div class="chips" role="group" aria-label="Destaques">
+        <button type="button" class="chip soft" data-toggle="tags:pontual" data-on="tags~pontual">Pontual</button>
+        <button type="button" class="chip soft" data-toggle="tags:capricho" data-on="tags~capricho">Caprichoso</button>
+        <button type="button" class="chip soft" data-toggle="tags:preco" data-on="tags~preco">Preço justo</button>
+        <button type="button" class="chip soft" data-toggle="tags:limpo" data-on="tags~limpo">Deixou tudo limpo</button>
+        <button type="button" class="chip soft" data-toggle="tags:educado" data-on="tags~educado">Educado</button>
+        <button type="button" class="chip soft" data-toggle="tags:explicou" data-on="tags~explicou">Explicou bem</button>
+      </div>
+
+      <h3 class="h2 sec"><label for="com">Conte para outras pessoas</label></h3>
+      <textarea class="ta" id="com" placeholder="Ex.: Chegou no horário, protegeu os móveis e o teto ficou ótimo."></textarea>
+      <p class="hint" style="margin-top: 8px">Sua avaliação aparece no perfil com seu primeiro nome.</p>
+    </div>
+
+    <div data-show="st=enviado" hidden style="text-align: center; padding-top: 40px">
+      <span class="badge" style="width: 68px; height: 68px; margin: 0 auto; background: var(--laranja); color: #fff"><i data-i="estrela" class="l"></i></span>
+      <h2 class="h1" style="margin-top: 16px">Valeu, Daniela</h2>
+      <p class="muted" style="max-width: 300px; margin: 0 auto">Sua avaliação ajuda outras pessoas a escolher com segurança e ajuda o profissional a conseguir mais trabalhos.</p>
+      <a class="card hstack" href="perfil.html" style="margin-top: 26px; text-align: left; gap: 12px">
+        <span class="badge"><i data-i="coracao"></i></span>
+        <span style="flex: 1"><span class="strong" style="display: block">Salvar nos favoritos</span><span class="small muted">Para chamar de novo quando precisar</span></span>
+        <i data-i="chev" class="s chev"></i>
+      </a>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <button type="button" class="btn" data-show="st=aberto" data-enable="temNota" data-set="st=enviado">Enviar avaliação</button>
+    <a class="btn-dark" href="inicio.html" data-show="st=enviado" hidden>Voltar ao início</a>
+  </footer>
+</div>
+<script src="assets/app.js"></script>
+<script>
+var nomes = ['', 'Muito ruim', 'Ruim', 'Ok', 'Bom', 'Excelente'];
+App.computed = function (s) {
+  var p = { wagner: ['Wagner', 'WL', 'Pintura do teto · Qui, 6'], edson: ['Edson', 'EP', 'Vazamento na pia · 03/09'] }[s.prof] || ['Wagner', 'WL', ''];
+  return { temNota: s.nota > 0, notaTxt: s.nota ? nomes[s.nota] : 'Toque nas estrelas', nome: p[0], ini: p[1], servico: p[2] };
+};
+App.after = function (c) {
+  document.querySelectorAll('.stars button').forEach(function (b, i) { b.classList.toggle('on', i < c.nota); });
+};
+</script>
+</body>
+</html>

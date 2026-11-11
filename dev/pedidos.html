@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F5F5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Meus pedidos · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{"aba": "and"}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <header class="top" style="padding-left: 20px; padding-right: 20px">
+    <h1 class="title" style="font-size: 24px">Meus pedidos</h1>
+  </header>
+  <div class="pad" style="padding-bottom: 6px">
+    <div class="seg" role="tablist" aria-label="Situação dos pedidos">
+      <button type="button" role="tab" data-set="aba=and" data-on="aba=and">Ativos</button>
+      <button type="button" role="tab" data-set="aba=conc" data-on="aba=conc">Concluídos</button>
+      <button type="button" role="tab" data-set="aba=canc" data-on="aba=canc">Cancelados</button>
+    </div>
+  </div>
+
+  <main class="scroll" style="padding-top: 12px">
+    <div class="stack" data-show="aba=and">
+      <a class="card hl" href="pedido.html?passo=3">
+        <div class="between"><span class="tag warm">Aguardando sua confirmação</span><span class="small muted">hoje</span></div>
+        <p class="strong" style="margin-top: 10px; font-size: 17px">Pintura do teto do quarto</p>
+        <p class="small muted">Wagner Lima · R$ 420</p>
+      </a>
+      <p class="small muted" style="text-align: center; margin-top: 8px">Precisa de mais alguma coisa? <a href="busca.html">Buscar profissionais</a></p>
+    </div>
+
+    <div class="stack" data-show="aba=conc" hidden>
+      <div class="card">
+        <div class="between"><span class="tag ok">Concluído · 12/10</span><b>R$ 150</b></div>
+        <p class="strong" style="margin-top: 10px; font-size: 17px">Instalação de chuveiro</p>
+        <p class="small muted">Rosa Antunes · você deu 5 estrelas</p>
+        <div class="hstack" style="margin-top: 12px; gap: 8px">
+          <a class="btn inline" href="solicitar.html">Contratar de novo</a>
+          <a class="btn-sec inline" href="recibo.html?servico=chuveiro">Recibo</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="between"><span class="tag ok">Concluído · 03/09</span><b>R$ 120</b></div>
+        <p class="strong" style="margin-top: 10px; font-size: 17px">Conserto de vazamento na pia</p>
+        <p class="small muted">Edson Paiva · ainda sem avaliação</p>
+        <div class="hstack" style="margin-top: 12px; gap: 8px">
+          <a class="btn inline" href="avaliar.html?prof=edson">Avaliar agora</a>
+          <a class="btn-sec inline" href="recibo.html?servico=pia">Recibo</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack" data-show="aba=canc" hidden>
+      <div class="card">
+        <div class="between"><span class="tag">Recusado pelo profissional</span><span class="small muted">21/08</span></div>
+        <p class="strong" style="margin-top: 10px; font-size: 17px">Poda de árvore no quintal</p>
+        <p class="small muted">Lúcia Freitas · sem horário na data pedida</p>
+        <a class="btn inline" href="busca.html" style="margin-top: 12px; width: auto; display: inline-flex">Buscar outro profissional</a>
+      </div>
+    </div>
+  </main>
+
+  <nav class="tabbar" aria-label="Navegação principal">
+    <a href="inicio.html"><i data-i="casa"></i>Início</a>
+    <a href="busca.html"><i data-i="busca"></i>Buscar</a>
+    <a href="pedidos.html" aria-current="page"><i data-i="pedidos"></i>Pedidos</a>
+    <a href="conta.html"><i data-i="user"></i>Conta</a>
+  </nav>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

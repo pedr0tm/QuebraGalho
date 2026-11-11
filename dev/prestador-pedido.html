@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F5F5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Novo pedido · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{"st": "aberto", "modo": "valor", "hora": "hoje18"}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <header class="top">
+    <a class="back" href="prestador-inicio.html" data-back aria-label="Voltar"><i data-i="voltar"></i></a>
+    <h1 class="title">Novo pedido</h1>
+  </header>
+
+  <main class="scroll">
+    <span class="tag warm"><i data-i="raio" class="xs"></i>Urgente · para hoje</span>
+    <p class="hstack small" style="gap: 4px; margin-top: 8px; color: var(--ok); font-weight: 700"><i data-i="check" class="xs"></i>Combina com você: pintura · dentro dos seus 8 km · no seu horário</p>
+    <h2 class="h1" style="margin-top: 12px; font-size: 25px">Infiltração no teto do quarto</h2>
+    <p style="font-size: 15px">Mancha de infiltração no teto do quarto, uns 2 m². Preciso raspar e pintar de novo.</p>
+    <div class="grid2" style="margin-top: 14px"><div class="ph">[FOTO] Teto do quarto</div><div class="ph">[FOTO] Detalhe da mancha</div></div>
+
+    <div class="group sec">
+      <div class="row"><span class="av c" aria-hidden="true" style="width: 36px; height: 36px; font-size: 13px">DS</span><span class="grow"><span class="t">Daniela S.</span><span class="d">Cliente desde 2026 · 4 pedidos</span></span><span class="rating"><i data-i="estrela"></i><b>5,0</b></span></div>
+      <div class="row"><i data-i="pin" style="color: var(--laranja-forte)"></i><span class="grow">Aldeota · 4,3 km de você</span></div>
+      <div class="row"><i data-i="relogio" style="color: var(--laranja-forte)"></i><span class="grow">Hoje, a partir das 18h</span></div>
+    </div>
+    <p class="hint" style="margin-top: 8px" data-show="st!=aceito">O endereço completo aparece depois que a Daniela aceitar sua proposta.</p>
+
+    <section class="sec" data-show="st=aberto">
+      <h2 class="h2">Como você quer responder?</h2>
+      <div class="seg" role="group" aria-label="Tipo de resposta" style="margin-bottom: 16px">
+        <button type="button" data-set="modo=valor" data-on="modo=valor">Enviar valor</button>
+        <button type="button" data-set="modo=visita" data-on="modo=visita">Avaliar no local</button>
+      </div>
+      <div class="fields" data-show="modo=valor">
+        <div class="field"><label class="lbl" for="valor">Valor do serviço</label><input class="in" id="valor" type="text" inputmode="decimal" value="R$ 420"></div>
+        <div class="field"><label class="lbl" for="incl">O que está incluso</label><textarea class="ta" id="incl">Raspagem, selador e duas demãos no teto do quarto. Material incluso.</textarea></div>
+      </div>
+      <div class="fields" data-show="modo=visita" hidden>
+        <p class="muted" style="font-size: 15px">Quando não dá para definir o serviço só pelas fotos, você agenda uma visita, analisa no local e depois envia o valor.</p>
+        <div class="field"><label class="lbl" for="vis">Valor da visita de avaliação</label><input class="in" id="vis" type="text" value="R$ 90"><span class="hint">Descontado do serviço se a cliente fechar com você.</span></div>
+        <div class="field">
+          <span class="lbl">Quando você pode ir?</span>
+          <div class="chips" role="group" aria-label="Horário da visita">
+            <button type="button" class="chip" data-set="hora=hoje18" data-on="hora=hoje18">Hoje, 18h</button>
+            <button type="button" class="chip" data-set="hora=amanha8" data-on="hora=amanha8">Amanhã, 8h</button>
+            <button type="button" class="chip" data-set="hora=amanha18" data-on="hora=amanha18">Amanhã, 18h</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="sec" data-show="st=enviado" hidden>
+      <div class="note-box ok"><i data-i="check"></i><div><p class="strong" data-text="enviadoTxt"></p><p class="small">Avisamos você quando a Daniela responder.</p></div></div>
+      <button type="button" class="demo" data-set="st=aceito">Simular aceite da Daniela</button>
+    </div>
+    <div class="sec" data-show="st=recusado" hidden>
+      <div class="card"><p class="strong">Pedido recusado</p><p class="small muted" style="margin-top: 4px">Tudo bem. A Daniela vai ver outros profissionais. Recusar não afeta sua nota.</p></div>
+    </div>
+    <div class="sec card dark" data-show="st=aceito" hidden>
+      <p class="small muted">Contratação confirmada</p>
+      <p class="num" style="font-size: 22px; margin-top: 2px">Daniela aceitou: R$ 420</p>
+      <p class="small muted" style="margin-top: 6px">Hoje, a partir das 18h · [RUA E NÚMERO], Aldeota. O pagamento é liberado depois que ela confirmar a conclusão.</p>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="row2" data-show="st=aberto">
+      <button type="button" class="btn-sec" data-set="st=recusado">Recusar</button>
+      <button type="button" class="btn" data-set="st=enviado"><span data-show="modo=valor">Enviar proposta</span><span data-show="modo=visita" hidden>Propor visita</span></button>
+    </div>
+    <a class="btn" href="prestador-servico.html" data-show="st=aceito" hidden>Ir para o serviço</a>
+    <a class="btn-dark" href="prestador-inicio.html" data-show="st=enviado|st=recusado" hidden>Voltar aos pedidos</a>
+  </footer>
+</div>
+<script src="assets/app.js"></script>
+<script>
+var horas = { hoje18: 'Hoje, 18h', amanha8: 'Amanhã, 8h', amanha18: 'Amanhã, 18h' };
+App.computed = function (s) { return { enviadoTxt: s.modo === 'valor' ? 'Proposta enviada: R$ 420' : 'Visita proposta: ' + horas[s.hora] + ' · R$ 90' }; };
+</script>
+</body>
+</html>

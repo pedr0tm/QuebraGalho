@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F5F5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Recuperar senha · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{"passo": "email"}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <header class="top">
+    <a class="back" href="entrar.html" data-back aria-label="Voltar"><i data-i="voltar"></i></a>
+    <h1 class="title">Recuperar senha</h1>
+  </header>
+
+  <main class="scroll">
+    <div data-show="passo=email">
+      <p class="lead" style="margin-top: 8px">Informe o e-mail ou celular da sua conta. Enviamos um código para você criar uma senha nova.</p>
+      <div class="field"><label class="lbl" for="rec">E-mail ou celular</label><input class="in" id="rec" type="text" placeholder="voce@email.com" autocomplete="username"></div>
+    </div>
+
+    <div data-show="passo=codigo" hidden>
+      <p class="lead" style="margin-top: 8px">Digite o código de 6 dígitos que enviamos e escolha a nova senha.</p>
+      <div class="fields">
+        <div class="field"><label class="lbl" for="cod">Código</label><input class="in" id="cod" type="text" inputmode="numeric" placeholder="000000" autocomplete="one-time-code" style="letter-spacing: 6px; font-weight: 700"></div>
+        <div class="field"><label class="lbl" for="nova">Nova senha</label><input class="in" id="nova" type="password" placeholder="Mínimo de 8 caracteres" autocomplete="new-password"></div>
+        <button type="button" class="btn-quiet" style="justify-content: flex-start; padding: 0" data-set="passo=codigo">Reenviar código</button>
+      </div>
+    </div>
+
+    <div data-show="passo=pronto" hidden style="text-align: center; padding-top: 40px">
+      <span class="badge ok" style="width: 64px; height: 64px; margin: 0 auto"><i data-i="cadeado" class="l"></i></span>
+      <h2 class="h1" style="margin-top: 16px; font-size: 24px">Senha alterada</h2>
+      <p class="muted">Agora é só entrar com a senha nova.</p>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <button type="button" class="btn" data-show="passo=email" data-set="passo=codigo">Enviar código</button>
+    <button type="button" class="btn" data-show="passo=codigo" data-set="passo=pronto" hidden>Salvar nova senha</button>
+    <a class="btn" href="entrar.html" data-show="passo=pronto" hidden>Ir para o login</a>
+  </footer>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

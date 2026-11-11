@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F5F5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Seu relato · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{"st": "aberta"}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <header class="top">
+    <a class="back" href="pedidos.html" data-back aria-label="Voltar"><i data-i="voltar"></i></a>
+    <h1 class="title">Seu relato</h1>
+  </header>
+
+  <main class="scroll">
+    <div class="card">
+      <div class="between">
+        <span class="tag warm" data-show="st=aberta">Profissional respondeu</span>
+        <span class="tag ok" data-show="st=aceita" hidden>Solução combinada</span>
+        <span class="tag" data-show="st=mediacao" hidden>Em mediação</span>
+        <span class="small muted">Protocolo [NÚMERO]</span>
+      </div>
+      <p class="strong" style="margin-top: 10px">Pintura do teto · Wagner Lima</p>
+      <p class="small muted">Serviço incompleto · pagamento de R$ 420 suspenso</p>
+    </div>
+
+    <h2 class="h2 sec">Conversa mediada</h2>
+    <div class="msgs">
+      <div class="msg me" style="max-width: 90%">Ficou uma parte do teto sem a segunda demão, perto da janela.
+        <div class="grid2" style="margin-top: 8px"><div class="ph">[FOTO] Canto da janela</div><div class="ph">[FOTO] Detalhe</div></div>
+        <span class="h">Você · ter, 21:50</span></div>
+      <div class="msg">Peço desculpas, a tinta acabou no fim. Posso voltar no sábado às 9h e terminar o canto sem custo.<span class="h">Wagner · qua, 08:15</span></div>
+      <div class="msg" style="background: var(--grafite); color: #fff; max-width: 92%" data-show="st=aceita" hidden>Combinado: o Wagner volta no sábado, 8, às 9h. Depois disso você confirma a conclusão e o pagamento é liberado.<span class="h" style="color: #CFC8C1">Quebra Galho</span></div>
+      <div class="msg" style="background: var(--grafite); color: #fff; max-width: 92%" data-show="st=mediacao" hidden>Nossa equipe vai analisar as fotos e ouvir os dois lados. Em até 2 dias úteis decidimos se o valor é liberado, devolvido em parte ou devolvido inteiro.<span class="h" style="color: #CFC8C1">Quebra Galho</span></div>
+    </div>
+    <p class="small muted" style="margin-top: 16px" data-show="st=aberta">A solução proposta resolve para você? Se não, nossa equipe faz a mediação.</p>
+  </main>
+
+  <footer class="foot">
+    <button type="button" class="btn" data-show="st=aberta" data-set="st=aceita">Aceitar a solução</button>
+    <button type="button" class="btn-quiet" data-show="st=aberta" data-set="st=mediacao">Pedir mediação do Quebra Galho</button>
+    <a class="btn-dark" href="pedidos.html" data-show="st!=aberta" hidden>Ver meus pedidos</a>
+  </footer>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

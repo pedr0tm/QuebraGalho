@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#252525">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Ganhos · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{"passo": 1}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <main class="scroll flush">
+    <header class="dark-zone">
+      <h1 class="num" style="font-size: 24px; margin: 0">Ganhos</h1>
+      <div class="grid2" style="margin-top: 14px">
+        <div class="stat"><p class="l" style="margin: 0 0 4px">A receber · bruto</p><p class="v" data-text="aReceber"></p></div>
+        <div class="stat"><p class="l" style="margin: 0 0 4px">Recebido em nov. · bruto</p><p class="v" data-text="recebido"></p></div>
+      </div>
+      <p class="hstack small muted" style="gap: 6px; margin-top: 12px"><i data-i="pix" class="xs"></i>Recebimento por Pix na chave cadastrada</p>
+    </header>
+
+    <section class="pad sec">
+      <h2 class="h2">Pagamento em andamento</h2>
+      <div class="card">
+        <div class="hstack" style="padding-bottom: 12px; border-bottom: 1px solid var(--linha)">
+          <span class="av c" aria-hidden="true">DS</span>
+          <span style="flex: 1"><span class="strong" style="display: block">Pintura do teto</span><span class="small muted">Daniela S. · hoje</span></span>
+          <b class="num" style="font-size: 19px">R$ 420</b>
+        </div>
+        <ol class="tl" id="tl" style="margin-top: 14px">
+          <li><span class="rail"><span class="dot"></span><span class="line"></span></span><div class="body"><p class="t">Serviço finalizado</p><p class="d">Hoje, 21:10 · fotos enviadas</p></div></li>
+          <li><span class="rail"><span class="dot"></span><span class="line"></span></span><div class="body"><p class="t">Cliente confirma a conclusão</p><p class="d" data-text="d1"></p></div></li>
+          <li><span class="rail"><span class="dot"></span><span class="line"></span></span><div class="body"><p class="t">Pagamento confirmado</p><p class="d" data-text="d2"></p></div></li>
+          <li><span class="rail"><span class="dot"></span><span class="line"></span></span><div class="body"><p class="t">Na sua conta</p><p class="d" data-text="d3"></p></div></li>
+        </ol>
+        <div class="group" style="background: var(--cinza)">
+          <div class="row"><span class="grow muted">Valor do serviço</span><span>R$ 420,00</span></div>
+          <div class="row"><span class="grow muted">Taxa do Quebra Galho</span><span>[TAXA]</span></div>
+          <div class="row"><b class="grow">Você recebe</b><b>[VALOR LÍQUIDO]</b></div>
+        </div>
+        <button type="button" class="demo" data-show="passo=1" data-set="passo=2">Simular confirmação da Daniela</button>
+        <button type="button" class="demo" data-show="passo=2" data-set="passo=3" hidden>Simular pagamento por Pix</button>
+        <button type="button" class="demo" data-show="passo=3" data-set="passo=4" hidden>Simular transferência</button>
+      </div>
+
+      <a class="card hl hstack" href="prestador-perfil.html" data-show="passo=4" hidden style="gap: 14px; margin-top: 10px">
+        <span class="badge"><i data-i="estrela"></i></span>
+        <span style="flex: 1"><span class="strong" style="display: block">A Daniela avaliou seu serviço</span><span class="small muted">Veja a nota e o comentário</span></span>
+        <i data-i="chev" class="s chev"></i>
+      </a>
+    </section>
+
+    <section class="pad sec">
+      <h2 class="h2">Histórico</h2>
+      <div class="group">
+        <div class="row"><span class="grow"><span class="t">Pintura da varanda · Ana P.</span><span class="d">Marcado para sex, 7</span></span><span style="text-align: right"><b style="display: block">R$ 380</b><span class="tag">Agendado</span></span></div>
+        <div class="row"><span class="grow"><span class="t">Reparo no forro · Jorge S.</span><span class="d">Recebido seg, 2</span></span><span style="text-align: right"><b style="display: block">R$ 290</b><span class="tag ok">Recebido</span></span></div>
+        <div class="row"><span class="grow"><span class="t">Pintura de cômodo · Carla M.</span><span class="d">Recebido 28/10</span></span><span style="text-align: right"><b style="display: block">R$ 450</b><span class="tag ok">Recebido</span></span></div>
+      </div>
+    </section>
+  </main>
+  <nav class="tabbar" aria-label="Navegação do prestador">
+    <a href="prestador-inicio.html"><i data-i="casa"></i>Início</a>
+    <a href="prestador-agenda.html"><i data-i="calendario"></i>Agenda</a>
+    <a href="prestador-ganhos.html" aria-current="page"><i data-i="dinheiro"></i>Ganhos</a>
+    <a href="prestador-perfil.html"><i data-i="user"></i>Perfil</a>
+  </nav>
+</div>
+<script src="assets/app.js"></script>
+<script>
+App.computed = function (s) {
+  var p = s.passo;
+  return {
+    d1: p >= 2 ? 'Daniela confirmou às 21:40' : 'Aguardando a Daniela',
+    d2: p >= 3 ? 'Pix recebido pela plataforma' : 'Ela paga depois de confirmar',
+    d3: p >= 4 ? 'Transferido hoje, 22:05' : 'Até 2 dias úteis depois do pagamento',
+    aReceber: p >= 4 ? 'R$ 380' : 'R$ 800',
+    recebido: p >= 4 ? 'R$ 710' : 'R$ 290'
+  };
+};
+App.after = function (c) {
+  document.querySelectorAll('#tl li').forEach(function (li, i) { li.className = i < c.passo ? 'done' : (i === c.passo ? 'now' : ''); });
+};
+</script>
+</body>
+</html>

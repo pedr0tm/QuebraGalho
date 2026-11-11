@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F5F5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Serviço de hoje · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{"st": 0, "antes": false, "depois": false}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <header class="top">
+    <a class="back" href="prestador-inicio.html" data-back aria-label="Voltar"><i data-i="voltar"></i></a>
+    <h1 class="title">Serviço de hoje</h1>
+  </header>
+
+  <main class="scroll">
+    <ol class="steps" aria-label="Etapas do serviço" style="list-style: none; padding: 0; margin: 4px 0 6px">
+      <li><span class="on" style="display: block; height: 5px; border-radius: 99px"></span></li>
+      <li><span id="s1" style="display: block; height: 5px; border-radius: 99px"></span></li>
+      <li><span id="s2" style="display: block; height: 5px; border-radius: 99px"></span></li>
+    </ol>
+    <div class="grid3 small strong" style="gap: 6px"><span>Agendado</span><span id="l1" class="muted">Em andamento</span><span id="l2" class="muted">Finalizado</span></div>
+
+    <h2 class="h1 sec" style="font-size: 24px">Pintura do teto do quarto</h2>
+    <p class="muted">Raspagem, selador e duas demãos. Material incluso.</p>
+
+    <div class="group sec">
+      <div class="row"><span class="av c" aria-hidden="true" style="width: 36px; height: 36px; font-size: 13px">DS</span><span class="grow t">Daniela S.</span><a class="icon-btn" href="mensagens.html?lado=prestador" aria-label="Mensagens com Daniela"><i data-i="chat" class="s"></i></a></div>
+      <div class="row"><i data-i="pin" style="color: var(--laranja-forte)"></i><span class="grow">[RUA E NÚMERO] · Aldeota</span></div>
+      <div class="row"><i data-i="relogio" style="color: var(--laranja-forte)"></i><span class="grow">Hoje, a partir das 18h</span><b>R$ 420</b></div>
+    </div>
+
+    <div class="note-box sec" data-show="st=0"><i data-i="camera" class="s"></i><span>Ao chegar, tire fotos de como estava. Elas protegem você e a cliente se houver qualquer dúvida.</span></div>
+
+    <section class="sec" data-show="st=1" hidden>
+      <h3 class="h2">Registro do serviço</h3>
+      <div class="grid2">
+        <button type="button" class="ph-add" data-set="antes=true" data-show="!antes"><i data-i="camera"></i>Foto do antes</button>
+        <div class="ph warm" data-show="antes" hidden>[FOTO] Antes · enviada</div>
+        <button type="button" class="ph-add" data-set="depois=true" data-show="!depois"><i data-i="camera"></i>Foto do depois</button>
+        <div class="ph warm" data-show="depois" hidden>[FOTO] Depois · enviada</div>
+      </div>
+      <p class="hint" style="margin-top: 8px">A foto do depois é necessária para finalizar.</p>
+      <h3 class="h2 sec"><label for="obs">Observações (opcional)</label></h3>
+      <textarea class="ta" id="obs" placeholder="Ex.: Recomendo verificar a calha, foi ela que causou a infiltração."></textarea>
+    </section>
+
+    <div class="note-box ok sec" data-show="st=2" hidden><i data-i="check"></i><div><p class="strong">Serviço finalizado</p><p class="small">Enviamos as fotos para a Daniela confirmar. O pagamento é liberado assim que ela confirmar.</p></div></div>
+  </main>
+
+  <footer class="foot">
+    <button type="button" class="btn" data-show="st=0" data-set="st=1">Cheguei, iniciar serviço</button>
+    <button type="button" class="btn" data-show="st=1" data-enable="depois" data-set="st=2" hidden>Finalizar serviço</button>
+    <a class="btn" href="prestador-ganhos.html" data-show="st=2" hidden>Acompanhar pagamento</a>
+  </footer>
+</div>
+<script src="assets/app.js"></script>
+<script>
+App.after = function (c) {
+  [1, 2].forEach(function (n) {
+    document.getElementById('s' + n).style.background = c.st >= n ? 'var(--laranja)' : 'var(--linha)';
+    document.getElementById('l' + n).className = c.st >= n ? '' : 'muted';
+  });
+  document.querySelectorAll('.steps li')[0].firstElementChild.style.background = 'var(--laranja)';
+};
+</script>
+</body>
+</html>

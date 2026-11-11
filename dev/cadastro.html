@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F5F5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Criar conta · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{"ver": false, "aceite": false}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <header class="top">
+    <a class="back" href="index.html" data-back aria-label="Voltar"><i data-i="voltar"></i></a>
+    <p class="title small muted" style="font-family: var(--texto); font-weight: 600; font-size: 14px">Conta de contratante</p>
+  </header>
+
+  <main class="scroll">
+    <h1 class="h1">Vamos criar<br>sua conta</h1>
+    <p class="lead">Leva um minuto. Com ela você chama profissionais e acompanha seus pedidos.</p>
+
+    <form class="fields" onsubmit="return false">
+      <div class="field"><label class="lbl" for="nome">Nome completo</label><input class="in" id="nome" type="text" placeholder="Daniela Santos" autocomplete="name"></div>
+      <div class="field"><label class="lbl" for="cel">Celular (WhatsApp)</label><input class="in" id="cel" type="tel" placeholder="(85) 9 0000-0000" autocomplete="tel"></div>
+      <div class="field"><label class="lbl" for="email">E-mail</label><input class="in" id="email" type="email" placeholder="voce@email.com" autocomplete="email"></div>
+      <div class="field">
+        <label class="lbl" for="senha">Senha</label>
+        <div class="in-wrap">
+          <input class="in" id="senha" type="password" placeholder="Mínimo de 8 caracteres" autocomplete="new-password">
+          <button type="button" data-toggle="ver" aria-label="Mostrar ou ocultar senha"><i data-i="olho"></i></button>
+        </div>
+      </div>
+      <div class="field">
+        <label class="lbl" for="bairro">Seu bairro ou CEP</label>
+        <input class="in" id="bairro" type="text" placeholder="Ex.: Aldeota ou 60150-000" autocomplete="postal-code">
+        <span class="hint">Usamos só para mostrar quem atende perto de você.</span>
+      </div>
+      <div class="hstack" style="align-items: flex-start; gap: 12px; margin-top: 2px">
+        <button type="button" role="checkbox" data-toggle="aceite" data-on="aceite" aria-label="Aceito os termos de uso e a política de privacidade" style="border: 0; background: none; padding: 2px 0; display: flex">
+          <span class="mark sq"><i data-i="check"></i></span>
+        </button>
+        <p style="font-size: 14px">Li e aceito os <a href="termos.html">Termos de uso</a> e a <a href="termos.html#privacidade">Política de privacidade</a> (LGPD).</p>
+      </div>
+    </form>
+  </main>
+
+  <footer class="foot">
+    <a class="btn" href="inicio.html" data-enable="aceite">Criar conta</a>
+  </footer>
+</div>
+<script src="assets/app.js"></script>
+<script>
+App.after = function (c) { document.getElementById('senha').type = c.ver ? 'text' : 'password'; };
+</script>
+</body>
+</html>

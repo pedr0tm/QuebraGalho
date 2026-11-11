@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#EC6F2D">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Boas-vindas · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{"tipo": ""}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <main class="scroll flush">
+  <header class="hero" style="padding-bottom: 28px">
+    <div class="hstack">
+      <img src="assets/logo.png" alt="" width="44" height="44" style="border-radius: 11px; box-shadow: 0 0 0 2px #fff">
+      <span style="font-family: var(--display); font-weight: 700; font-size: 22px; color: #fff; letter-spacing: -0.3px">Quebra Galho</span>
+    </div>
+    <h1 class="h1" style="margin-top: 26px; font-size: 29px">Cano estourou?<br>Grama alta?<br>A gente acha quem resolve.</h1>
+    <p style="margin-top: 12px; font-weight: 500; max-width: 300px">Profissionais do seu bairro, com avaliações de quem já contratou.</p>
+    <p class="small" style="margin-top: 18px; font-weight: 600; letter-spacing: .2px; opacity: .9">Encanador · Eletricista · Pintor · Pedreiro · Jardineiro · Marceneiro</p>
+  </header>
+
+  <div class="pad" style="padding-top: 24px">
+    <h2 class="h2">Como você quer usar o app?</h2>
+    <div class="opts" role="radiogroup" aria-label="Tipo de conta">
+      <button type="button" class="opt" role="radio" data-set="tipo=contratante" data-on="tipo=contratante">
+        <span class="badge"><i data-i="busca"></i></span>
+        <span class="tx"><span class="t">Preciso de um serviço</span><span class="d">Encontrar e chamar um profissional</span></span>
+        <span class="mark"></span>
+      </button>
+      <button type="button" class="opt" role="radio" data-set="tipo=prestador" data-on="tipo=prestador">
+        <span class="badge"><i data-i="chave"></i></span>
+        <span class="tx"><span class="t">Quero oferecer meus serviços</span><span class="d">Receber pedidos e encher a agenda</span></span>
+        <span class="mark"></span>
+      </button>
+    </div>
+  </div>
+  </main>
+
+  <footer class="foot" style="border-top: 0; background: transparent">
+    <a class="btn" href="#" aria-disabled="true" data-show="!tipo">Continuar</a>
+    <a class="btn" href="cadastro.html" data-show="tipo=contratante" hidden>Continuar</a>
+    <a class="btn" href="prestador-cadastro.html" data-show="tipo=prestador" hidden>Continuar</a>
+    <p class="note" style="font-size: 15px">Já tem conta? <a href="entrar.html">Entrar</a></p>
+  </footer>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

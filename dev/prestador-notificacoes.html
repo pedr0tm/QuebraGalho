@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F5F5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Notificações · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{"lidas": false}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <header class="top">
+    <a class="back" href="prestador-inicio.html" data-back aria-label="Voltar"><i data-i="voltar"></i></a>
+    <h1 class="title">Notificações</h1>
+    <button type="button" class="act" data-set="lidas=true" data-show="!lidas">Marcar como lidas</button>
+  </header>
+
+  <main class="scroll">
+    <h2 class="small muted strong" style="margin: 6px 0 8px">Hoje</h2>
+    <div class="group">
+      <a class="row" href="prestador-pedido.html">
+        <span class="badge"><i data-i="raio"></i></span>
+        <span class="grow"><span class="t">Pedido urgente perto de você</span><span class="d">Pintura · Aldeota, 4,3 km. Combina com seus serviços · há 12 min</span></span>
+        <span class="tag solid" data-show="!lidas">Nova</span>
+      </a>
+      <a class="row" href="prestador-pedido.html">
+        <span class="badge"><i data-i="pedidos"></i></span>
+        <span class="grow"><span class="t">Novo pedido de orçamento</span><span class="d">Paulo R. quer rebaixar o teto da sala · há 1h</span></span>
+        <span class="tag solid" data-show="!lidas">Nova</span>
+      </a>
+    </div>
+
+    <h2 class="small muted strong" style="margin: 20px 0 8px">Esta semana</h2>
+    <div class="group">
+      <a class="row" href="prestador-disputa.html">
+        <span class="badge"><i data-i="escudo-alerta"></i></span>
+        <span class="grow"><span class="t">Daniela relatou um problema</span><span class="d">Pintura do teto. Responda em até 2 dias · ter</span></span>
+        <span class="tag solid" data-show="!lidas">Nova</span>
+      </a>
+      <a class="row" href="prestador-servico.html">
+        <span class="badge ok"><i data-i="calendario"></i></span>
+        <span class="grow"><span class="t">Serviço confirmado</span><span class="d">Ana P. aceitou sua proposta para sexta, 14h · ontem</span></span>
+        <i data-i="chev" class="s chev"></i>
+      </a>
+      <a class="row" href="prestador-ganhos.html">
+        <span class="badge ok"><i data-i="dinheiro"></i></span>
+        <span class="grow"><span class="t">Pagamento recebido</span><span class="d">R$ 290 do serviço para Jorge S. · seg</span></span>
+        <i data-i="chev" class="s chev"></i>
+      </a>
+      <a class="row" href="prestador-perfil.html">
+        <span class="badge"><i data-i="estrela"></i></span>
+        <span class="grow"><span class="t">Nova avaliação: 5 estrelas</span><span class="d">Jorge S.: "Preço combinado foi o preço cobrado." · seg</span></span>
+        <i data-i="chev" class="s chev"></i>
+      </a>
+    </div>
+  </main>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

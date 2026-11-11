@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#EC6F2D">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Início · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <main class="scroll flush">
+    <header class="hero">
+      <div class="between">
+        <div>
+          <p style="font-weight: 600">Olá, Daniela</p>
+          <p class="hstack small" style="gap: 4px; font-weight: 500"><i data-i="pin" class="xs"></i>Aldeota, Fortaleza</p>
+        </div>
+        <a class="icon-btn" href="notificacoes.html" aria-label="Notificações, 2 novas" style="border: 0"><i data-i="sino"></i><span class="dot-new" style="border-color: #fff"></span></a>
+      </div>
+      <h1 class="h1" style="margin: 22px 0 16px">Do que sua casa<br>precisa hoje?</h1>
+      <a class="searchbox" href="busca.html"><i data-i="busca" style="color: var(--grafite)"></i>Encanador, pintor, eletricista…</a>
+    </header>
+
+    <div class="pad" style="margin-top: 18px">
+      <a class="card dark hstack" href="busca.html?hoje=true&urg=true" style="gap: 14px">
+        <span class="badge" style="background: var(--laranja); color: #fff"><i data-i="raio"></i></span>
+        <span style="flex: 1"><span class="strong" style="display: block; font-size: 17px">É urgente?</span><span class="muted small">Veja quem pode ir ainda hoje</span></span>
+        <i data-i="chev" class="s"></i>
+      </a>
+    </div>
+
+    <section class="pad sec">
+      <h2 class="h2">Categorias</h2>
+      <div class="cats">
+        <a class="cat" href="busca.html?termo=Encanador"><span class="ic"><i data-i="gota"></i></span>Encanador</a>
+        <a class="cat" href="busca.html?termo=Eletricista"><span class="ic"><i data-i="tomada"></i></span>Eletricista</a>
+        <a class="cat" href="busca.html"><span class="ic"><i data-i="rolo"></i></span>Pintor</a>
+        <a class="cat" href="busca.html?termo=Pedreiro"><span class="ic"><i data-i="tijolo"></i></span>Pedreiro</a>
+        <a class="cat" href="busca.html?termo=Jardineiro"><span class="ic"><i data-i="folha"></i></span>Jardineiro</a>
+        <a class="cat" href="busca.html?termo=Marceneiro"><span class="ic"><i data-i="martelo"></i></span>Marceneiro</a>
+        <a class="cat" href="busca.html?termo=Reformas"><span class="ic"><i data-i="reforma"></i></span>Reformas</a>
+        <a class="cat" href="busca.html?termo=Todos"><span class="ic"><i data-i="mais"></i></span>Ver todas</a>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="pad" style="margin-bottom: 12px">
+        <h2 class="h2" style="margin: 0">Recomendados para você</h2>
+        <p class="small muted">Pelo seu bairro e pelos serviços que você já contratou</p>
+      </div>
+      <div class="hscroll">
+        <a class="card" href="perfil.html">
+          <div class="hstack">
+            <span class="av" aria-hidden="true">WL</span>
+            <span><span class="hstack strong" style="gap: 4px">Wagner Lima <i data-i="escudo" class="xs verif" aria-label="Verificado"></i></span><span class="small muted">Pintor · Gesseiro</span></span>
+          </div>
+          <p class="rating" style="margin-top: 12px"><i data-i="estrela"></i><b>4,9</b><span class="muted">(37) · 2,1 km</span></p>
+          <p style="margin-top: 10px"><span class="tag ok">Disponível hoje</span></p>
+        </a>
+        <a class="card" href="perfil.html">
+          <div class="hstack">
+            <span class="av" aria-hidden="true">RA</span>
+            <span><span class="hstack strong" style="gap: 4px">Rosa Antunes <i data-i="escudo" class="xs verif" aria-label="Verificado"></i></span><span class="small muted">Eletricista</span></span>
+          </div>
+          <p class="rating" style="margin-top: 12px"><i data-i="estrela"></i><b>4,8</b><span class="muted">(52) · 3,4 km</span></p>
+          <p style="margin-top: 10px"><span class="tag">Agenda: amanhã, 8h</span></p>
+        </a>
+      </div>
+    </section>
+  </main>
+  <nav class="tabbar" aria-label="Navegação principal">
+    <a href="inicio.html" aria-current="page"><i data-i="casa"></i>Início</a>
+    <a href="busca.html"><i data-i="busca"></i>Buscar</a>
+    <a href="pedidos.html"><i data-i="pedidos"></i>Pedidos</a>
+    <a href="conta.html"><i data-i="user"></i>Conta</a>
+  </nav>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

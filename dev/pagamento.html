@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F5F5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quebra Galho">
+<title>Pagamento · Quebra Galho</title>
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-state='{"st": "escolher", "meio": "pix", "parc": 1, "copiado": false}'>
+<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<div class="app">
+  <header class="top">
+    <a class="back" href="conclusao.html" data-back aria-label="Voltar"><i data-i="voltar"></i></a>
+    <h1 class="title" data-text="titulo"></h1>
+  </header>
+
+  <main class="scroll">
+    <div data-show="st=escolher">
+      <div class="group">
+        <div class="row"><span class="grow muted">Pintura do teto · Wagner Lima</span><span>R$ 420,00</span></div>
+        <div class="row"><span class="grow muted">Taxa para você</span><span>R$ 0,00</span></div>
+        <div class="row"><b class="grow">Total</b><b class="num" style="font-size: 22px">R$ 420,00</b></div>
+      </div>
+
+      <h2 class="h2 sec">Como você quer pagar?</h2>
+      <div class="opts" role="radiogroup" aria-label="Meio de pagamento">
+        <button type="button" class="opt" role="radio" data-set="meio=pix" data-on="meio=pix"><span class="badge"><i data-i="pix"></i></span><span class="tx"><span class="t">Pix</span><span class="d">Aprovação na hora</span></span><span class="mark"></span></button>
+        <button type="button" class="opt" role="radio" data-set="meio=cartao" data-on="meio=cartao"><span class="badge"><i data-i="cartao"></i></span><span class="tx"><span class="t">Cartão de crédito</span><span class="d">Em até 3x sem juros</span></span><span class="mark"></span></button>
+      </div>
+
+      <div class="fields sec" data-show="meio=cartao" hidden>
+        <div class="field"><label class="lbl" for="num">Número do cartão</label><input class="in" id="num" type="text" inputmode="numeric" placeholder="0000 0000 0000 0000" autocomplete="cc-number"></div>
+        <div class="grid2" style="gap: 10px">
+          <div class="field"><label class="lbl" for="val">Validade</label><input class="in" id="val" type="text" placeholder="MM/AA" autocomplete="cc-exp"></div>
+          <div class="field"><label class="lbl" for="cvv">CVV</label><input class="in" id="cvv" type="text" inputmode="numeric" placeholder="123" autocomplete="cc-csc"></div>
+        </div>
+        <div class="field"><label class="lbl" for="nc">Nome impresso no cartão</label><input class="in" id="nc" type="text" placeholder="DANIELA SANTOS" autocomplete="cc-name"></div>
+        <div class="field">
+          <span class="lbl">Parcelas</span>
+          <div class="seg" role="group" aria-label="Parcelas">
+            <button type="button" data-set="parc=1" data-on="parc=1">1x R$ 420</button>
+            <button type="button" data-set="parc=2" data-on="parc=2">2x R$ 210</button>
+            <button type="button" data-set="parc=3" data-on="parc=3">3x R$ 140</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="hstack small muted sec" style="align-items: flex-start; gap: 8px"><i data-i="escudo" class="s" style="color: var(--ok)"></i>O pagamento passa pelo Quebra Galho e só é repassado ao Wagner porque você confirmou a conclusão.</p>
+    </div>
+
+    <div data-show="st=pix" hidden>
+      <p class="muted" style="margin: 4px 0 16px">Abra o app do seu banco e pague com o QR Code ou com o código copia e cola.</p>
+      <div class="card" style="text-align: center; padding: 20px">
+        <div role="img" aria-label="QR Code do Pix" class="ph" style="width: 200px; aspect-ratio: 1; margin: 0 auto; justify-content: center; align-items: center">[QR CODE PIX]</div>
+        <p class="num" style="font-size: 26px; margin-top: 14px">R$ 420,00</p>
+        <p class="small muted">Código válido por 30 minutos</p>
+      </div>
+      <button type="button" class="btn" style="margin-top: 14px" data-set="copiado=true" data-show="!copiado"><i data-i="copiar" class="s"></i>Copiar código Pix</button>
+      <button type="button" class="btn-sec" style="margin-top: 14px; color: var(--ok); border-color: var(--ok-claro); background: var(--ok-claro)" data-show="copiado" hidden><i data-i="check" class="s"></i>Código copiado</button>
+      <button type="button" class="demo" data-set="st=pago">Simular Pix recebido</button>
+    </div>
+
+    <div data-show="st=pago" hidden style="text-align: center; padding-top: 18px">
+      <span class="badge" style="width: 68px; height: 68px; margin: 0 auto; background: var(--laranja); color: #fff"><i data-i="check" class="l"></i></span>
+      <h2 class="h1" style="margin-top: 16px">Pagamento feito</h2>
+      <p class="muted">Obrigado, Daniela. O Wagner recebe o valor em até 2 dias úteis.</p>
+      <div class="group" style="margin-top: 20px; text-align: left">
+        <div class="row"><span class="grow muted">Valor</span><b>R$ 420,00</b></div>
+        <div class="row"><span class="grow muted">Meio</span><b data-text="meioTxt"></b></div>
+        <a class="row" href="recibo.html"><span class="grow muted">Comprovante</span><span style="color: var(--laranja-forte); font-weight: 700">Ver recibo</span><i data-i="chev" class="s chev"></i></a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <button type="button" class="btn" data-show="st=escolher&meio=pix" data-set="st=pix">Gerar Pix de R$ 420,00</button>
+    <button type="button" class="btn" data-show="st=escolher&meio=cartao" data-set="st=pago" hidden>Pagar R$ 420,00</button>
+    <button type="button" class="btn-sec" data-show="st=pix" data-set="st=escolher&copiado=false" hidden>Trocar meio de pagamento</button>
+    <a class="btn" href="avaliar.html" data-show="st=pago" hidden>Avaliar o serviço</a>
+  </footer>
+</div>
+<script src="assets/app.js"></script>
+<script>
+App.computed = function (s) {
+  return { titulo: s.st === 'pix' ? 'Pagar com Pix' : 'Pagamento', meioTxt: s.meio === 'pix' ? 'Pix' : 'Cartão · ' + s.parc + 'x' };
+};
+</script>
+</body>
+</html>
