@@ -14,9 +14,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
 <link rel="stylesheet" href="assets/app.css">
+<link rel="stylesheet" href="assets/desktop.css">
 </head>
-<body data-state='{"sel": ["Pintor", "Gesseiro"], "anos": 12, "erro": false, "editar": false}'>
-<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<body data-page="prestador-cadastro" data-layout="auth" data-lado="p" data-state='{"sel": ["Pintor", "Gesseiro"], "anos": 12, "erro": false, "editar": false}'>
 <div class="app">
   <header class="top">
     <a class="back" href="index.html" data-back aria-label="Voltar"><i data-i="voltar"></i></a>
@@ -83,6 +83,7 @@
 </div>
 <script src="assets/app.js"></script>
 <script>
+if (App.s.editar) document.body.setAttribute('data-layout', 'shell');
 App.computed = function (s) {
   var n = s.sel.length;
   return {

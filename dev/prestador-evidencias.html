@@ -14,9 +14,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
 <link rel="stylesheet" href="assets/app.css">
+<link rel="stylesheet" href="assets/desktop.css">
 </head>
-<body data-state='{"fotos": 2, "falhou": true, "docs": [], "editar": false}'>
-<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<body data-page="prestador-evidencias" data-layout="auth" data-lado="p" data-state='{"fotos": 2, "falhou": true, "docs": [], "editar": false}'>
 <div class="app">
   <header class="top">
     <a class="back" href="prestador-cadastro.html" data-back aria-label="Voltar"><i data-i="voltar"></i></a>
@@ -63,6 +63,7 @@
 </div>
 <script src="assets/app.js"></script>
 <script>
+if (App.s.editar) document.body.setAttribute('data-layout', 'shell');
 App.computed = function (s) {
   return { f3: s.fotos >= 3, f4: s.fotos >= 4, f5: s.fotos >= 5, fotosTxt: s.fotos + (s.fotos === 1 ? ' foto enviada' : ' fotos enviadas') };
 };

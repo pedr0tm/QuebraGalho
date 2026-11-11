@@ -14,9 +14,147 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
 <link rel="stylesheet" href="assets/app.css">
+<link rel="stylesheet" href="assets/desktop.css">
 </head>
-<body data-state='{"tipo": ""}'>
-<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<body data-page="index" data-layout="landing" data-lado="comum" data-state='{"tipo": ""}'>
+<div class="landing d-only">
+  <header class="l-wrap l-nav">
+    <a class="dlogo" href="index.html"><img src="assets/logo.png" alt="">Quebra Galho</a>
+    <nav class="links" aria-label="Seções">
+      <a href="#categorias">Categorias</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#profissionais">Para profissionais</a>
+    </nav>
+    <div class="acts">
+      <a class="btn-sec" href="entrar.html">Entrar</a>
+      <a class="btn" href="cadastro.html">Criar conta</a>
+    </div>
+  </header>
+
+  <section class="l-hero">
+    <div class="l-wrap">
+      <div>
+        <h1>Cano estourou?<br>Grama alta?<br>A gente acha quem resolve.</h1>
+        <p class="sub">Encanadores, eletricistas, pintores e outros profissionais do seu bairro, com avaliações de quem já contratou.</p>
+        <form class="l-search" action="busca.html" role="search">
+          <label><i data-i="busca"></i><span class="sr">Serviço</span><input name="termo" placeholder="Que serviço você precisa?"></label>
+          <label><i data-i="pin"></i><span class="sr">Bairro</span><input placeholder="Seu bairro" value="Aldeota"></label>
+          <button class="btn" type="submit">Buscar</button>
+        </form>
+        <p class="l-pop">Mais procurados:
+          <a href="busca.html?termo=Encanador">Vazamento</a>
+          <a href="busca.html">Pintura</a>
+          <a href="busca.html?termo=Eletricista">Tomada e chuveiro</a>
+          <a href="busca.html?termo=Jardineiro">Jardim</a>
+        </p>
+      </div>
+      <div class="l-mock" aria-hidden="true">
+        <div class="card m1">
+          <div class="hstack"><span class="av">WL</span><span><b class="hstack" style="gap: 4px">Wagner Lima <i data-i="escudo" class="xs verif"></i></b><span class="small muted">Pintor · Gesseiro</span></span></div>
+          <p class="rating" style="margin-top: 10px"><i data-i="estrela"></i><b>4,9</b><span class="muted">(37) · 2,1 km</span></p>
+          <p style="margin-top: 10px"><span class="tag ok">Disponível hoje</span></p>
+        </div>
+        <div class="card m2">
+          <p class="small muted">Proposta recebida</p>
+          <p class="num" style="font-size: 28px">R$ 420</p>
+          <p class="small muted">Pintura do teto · material incluso</p>
+          <div class="grid2" style="margin-top: 12px"><span class="btn-sec inline" style="justify-content: center">Recusar</span><span class="btn inline" style="justify-content: center">Aceitar</span></div>
+        </div>
+        <div class="card m3">
+          <p class="hstack strong" style="gap: 8px"><i data-i="check" class="s" style="color: var(--laranja)"></i>Serviço concluído</p>
+          <p class="small" style="color: #CFC8C1; margin-top: 4px">Você confirma e só então o pagamento é feito.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="l-sec" id="categorias">
+    <div class="l-wrap">
+      <h2>O que você precisa resolver?</h2>
+      <p class="sub">Escolha uma categoria e veja quem atende perto de você.</p>
+      <div class="l-cats">
+        <a href="busca.html?termo=Encanador"><i data-i="gota"></i>Encanador</a>
+        <a href="busca.html?termo=Eletricista"><i data-i="tomada"></i>Eletricista</a>
+        <a href="busca.html"><i data-i="rolo"></i>Pintor</a>
+        <a href="busca.html?termo=Pedreiro"><i data-i="tijolo"></i>Pedreiro</a>
+        <a href="busca.html?termo=Jardineiro"><i data-i="folha"></i>Jardineiro</a>
+        <a href="busca.html?termo=Marceneiro"><i data-i="martelo"></i>Marceneiro</a>
+        <a href="busca.html?termo=Reformas"><i data-i="reforma"></i>Reformas</a>
+        <a href="busca.html?termo=Todos"><i data-i="mais"></i>Ver todas</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="l-sec" id="como-funciona" style="padding-top: 0">
+    <div class="l-wrap">
+      <h2>Como funciona</h2>
+      <p class="sub">Do problema ao serviço pronto, sem precisar pedir indicação no grupo da família.</p>
+      <ol class="l-steps">
+        <li><h3>Conte o que aconteceu</h3><p>Escolha o serviço, diga se é urgente ou para agendar e mande fotos do problema.</p></li>
+        <li><h3>Compare e escolha</h3><p>Veja nota, avaliações, comprovações, preço da visita e quem pode ir hoje.</p></li>
+        <li><h3>Combine e pague no final</h3><p>Aceite a proposta pelo app. O pagamento só acontece depois que você confirmar a conclusão.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="l-sec l-trust">
+    <div class="l-wrap">
+      <h2>Contratar com segurança</h2>
+      <p class="sub">O que protege você em cada pedido.</p>
+      <div class="grid">
+        <div class="item"><i data-i="escudo"></i><h3>Perfis verificados</h3><p>Documento conferido e comprovações como certificados e MEI aparecem com selo.</p></div>
+        <div class="item"><i data-i="cadeado"></i><h3>Pagamento protegido</h3><p>Você paga pela plataforma, por Pix ou cartão, só depois do serviço concluído.</p></div>
+        <div class="item"><i data-i="escudo-alerta"></i><h3>Ajuda se der errado</h3><p>Relate o problema com fotos. A equipe faz a mediação antes de liberar o valor.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="l-sec l-pro" id="profissionais">
+    <div class="l-wrap">
+      <div>
+        <h2>É profissional? Encha sua agenda.</h2>
+        <p class="sub">Receba pedidos do seu bairro, nos horários que você escolher, sem depender só de indicação.</p>
+        <ul>
+          <li><i data-i="calendario"></i>Você define dias, horários e até onde vai.</li>
+          <li><i data-i="estrela"></i>Cada serviço bem feito vira avaliação no seu perfil.</li>
+          <li><i data-i="dinheiro"></i>Pagamento garantido, na sua conta em até 2 dias úteis.</li>
+        </ul>
+        <a class="btn" href="prestador-cadastro.html">Cadastrar como profissional</a>
+      </div>
+      <div class="panel" aria-hidden="true">
+        <div class="card">
+          <div class="between"><span class="tag warm"><i data-i="raio" class="xs"></i>Urgente · hoje</span><span class="small" style="color: #CFC8C1">há 12 min</span></div>
+          <p class="strong" style="margin-top: 10px">Infiltração no teto do quarto</p>
+          <p class="small" style="color: #CFC8C1">Pintura · Aldeota, 4,3 km</p>
+        </div>
+        <div class="grid2">
+          <div class="stat" style="background: var(--grafite)"><p class="v">R$ 4.860</p><p class="l" style="color: #CFC8C1">ganhos no mês (exemplo)</p></div>
+          <div class="stat" style="background: var(--grafite)"><p class="v">4,9</p><p class="l" style="color: #CFC8C1">nota média (exemplo)</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="l-sec l-cta">
+    <div class="l-wrap">
+      <h2>Pronto para resolver?</h2>
+      <p class="sub" style="margin-left: auto; margin-right: auto">Criar a conta leva um minuto.</p>
+      <div class="acts">
+        <a class="btn" href="cadastro.html">Preciso de um serviço</a>
+        <a class="btn-sec" href="prestador-cadastro.html">Quero oferecer serviços</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="l-foot">
+    <div class="l-wrap">
+      <span>Quebra Galho · projeto acadêmico da disciplina PA1, 2026.2</span>
+      <a href="termos.html">Termos e privacidade</a>
+      <a href="https://github.com/pedr0tm/QuebraGalho">Repositório no GitHub</a>
+    </div>
+  </footer>
+</div>
+
 <div class="app">
   <main class="scroll flush">
   <header class="hero" style="padding-bottom: 28px">

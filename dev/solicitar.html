@@ -14,9 +14,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
 <link rel="stylesheet" href="assets/app.css">
+<link rel="stylesheet" href="assets/desktop.css">
 </head>
-<body data-state='{"servico": "Pintura", "quando": "agendar", "dia": "6", "periodo": "Noite", "fotos": 0, "end": "casa", "trocar": false}'>
-<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<body data-page="solicitar" data-layout="aside" data-lado="c" data-state='{"servico": "Pintura", "quando": "agendar", "dia": "6", "periodo": "Noite", "fotos": 0, "end": "casa", "trocar": false}'>
 <div class="app">
   <header class="top">
     <a class="back" href="perfil.html" data-back aria-label="Voltar"><i data-i="voltar"></i></a>
@@ -93,13 +93,23 @@
   </main>
 
   <footer class="foot">
+    <div class="d-only">
+      <p class="h2" style="margin-bottom: 12px">Resumo do pedido</p>
+      <div class="group" style="background: var(--cinza); margin-bottom: 6px">
+        <div class="row"><span class="grow muted">Profissional</span><b>Wagner Lima</b></div>
+        <div class="row"><span class="grow muted">Serviço</span><b data-text="servico"></b></div>
+        <div class="row"><span class="grow muted">Quando</span><b data-text="quandoTxt"></b></div>
+        <div class="row"><span class="grow muted">Fotos</span><b data-text="fotos"></b></div>
+      </div>
+    </div>
     <a class="btn" href="pedido.html">Enviar pedido</a>
     <p class="note">Nada é cobrado agora. Você paga só depois do serviço concluído.</p>
   </footer>
 </div>
 <script src="assets/app.js"></script>
 <script>
-App.computed = function (s) { return { f1: s.fotos >= 1, f2: s.fotos >= 2, f3: s.fotos >= 3 }; };
+var DIAS = { 6: 'Qui, 6', 7: 'Sex, 7', 8: 'Sáb, 8', 9: 'Dom, 9', 10: 'Seg, 10' };
+App.computed = function (s) { return { f1: s.fotos >= 1, f2: s.fotos >= 2, f3: s.fotos >= 3, quandoTxt: s.quando === 'urgente' ? 'Urgente, hoje' : DIAS[s.dia] + ' · ' + s.periodo.toLowerCase() }; };
 </script>
 </body>
 </html>

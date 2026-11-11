@@ -14,10 +14,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
 <link rel="stylesheet" href="assets/app.css">
+<link rel="stylesheet" href="assets/desktop.css">
 </head>
-<body data-state='{}'>
-<div class="desk">Versão de Computador ainda em Desenvolvimento.</div>
+<body data-page="mensagens" data-layout="inbox" data-lado="comum" data-state='{}'>
 <div class="app">
+  <nav class="dconv d-only" aria-label="Conversas">
+    <h2>Mensagens</h2>
+    <a class="on" href="mensagens.html" id="c1"><span class="av" aria-hidden="true">WL</span><span><span class="t">Wagner Lima</span><span class="d">Vi aqui. Já te enviei a proposta…</span></span></a>
+    <a href="mensagens.html" id="c2"><span class="av" aria-hidden="true">RA</span><span><span class="t">Rosa Antunes</span><span class="d">Sábado às 8h fica bom para você?</span></span></a>
+    <a href="mensagens.html" id="c3"><span class="av c" aria-hidden="true"><i data-i="ajuda" class="s"></i></span><span><span class="t">Suporte Quebra Galho</span><span class="d">Como podemos ajudar?</span></span></a>
+  </nav>
   <header class="top" style="background: #fff; border-bottom: 1px solid var(--linha)">
     <a class="back" href="perfil.html" data-back aria-label="Voltar"><i data-i="voltar"></i></a>
     <span class="av" id="avOutro" aria-hidden="true">WL</span>
@@ -49,6 +55,8 @@
 // ?lado=prestador mostra a mesma conversa do ponto de vista do Wagner
 var prestador = App.lado === 'prestador';
 if (prestador) {
+  var cv = [['DS', 'Daniela S.', 'Vi aqui. Já te enviei a proposta…', 'c'], ['AP', 'Ana P.', 'Sexta às 14h está confirmado.', 'c'], ['PR', 'Paulo R.', 'Consegue passar para medir?', 'c']];
+  cv.forEach(function (c, i) { var a = document.getElementById('c' + (i + 1)); if (!a) return; a.href = 'mensagens.html?lado=prestador'; a.querySelector('.av').className = 'av ' + c[3]; a.querySelector('.av').textContent = c[0]; a.querySelector('.t').textContent = c[1]; a.querySelector('.d').textContent = c[2]; });
   document.getElementById('avOutro').textContent = 'DS';
   document.getElementById('avOutro').className = 'av c';
   document.getElementById('nomeOutro').textContent = 'Daniela S.';

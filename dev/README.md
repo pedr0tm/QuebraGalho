@@ -1,8 +1,16 @@
 # Protótipo navegável · Quebra Galho
 
-Protótipo mobile das duas jornadas do PSF (contratante e prestador), cobrindo as 37 histórias da planilha `PlanejamentoUserStories.xlsx`.
+Protótipo navegável (mobile e desktop) das duas jornadas do PSF (contratante e prestador), cobrindo as 37 histórias da planilha `PlanejamentoUserStories.xlsx`.
 
-**Como abrir:** pelo celular, ou no navegador do computador com o modo de dispositivo/telefone ligado (Chrome/Edge: `F12` → ícone de celular, ou `Ctrl+Shift+M`). Em tela de computador comum aparece só o aviso "Versão de Computador ainda em Desenvolvimento.".
+**Versão:** v0.2.0 (mobile + desktop).
+
+**Como abrir:** é o mesmo endereço no celular e no computador. Abaixo de 900 px de largura aparece o formato de app; a partir de 900 px aparece a versão desktop:
+
+- **Página pública** (`index.html`): busca, categorias, como funciona e chamada para profissionais. No celular, o mesmo endereço abre a tela de boas-vindas do app.
+- **Contratante:** barra superior com busca e menu. Os resultados aparecem em grade, e o perfil do profissional tem um cartão de contratação fixo à direita.
+- **Prestador:** painel com menu lateral (início, notificações, agenda, ganhos, mensagens, reputação, desempenho).
+- **Cadastro e login:** tela dividida, com o painel da marca à esquerda.
+- **Mensagens:** caixa de entrada em duas colunas.
 
 Os botões tracejados marcados como **Demonstração** simulam a resposta da outra pessoa (ex.: o profissional aceitando) para mostrar o fluxo inteiro.
 
@@ -10,7 +18,7 @@ Os botões tracejados marcados como **Demonstração** simulam a resposta da out
 
 ```
 dev/
-├── index.html                  Boas-vindas (início das duas jornadas)
+├── index.html                  Página pública (desktop) e boas-vindas (celular)
 ├── cadastro.html, entrar.html, esqueci-senha.html, termos.html
 ├── inicio.html, notificacoes.html, busca.html, perfil.html, mensagens.html
 ├── solicitar.html, pedido.html, pedidos.html, conclusao.html, disputa.html
@@ -18,8 +26,9 @@ dev/
 ├── prestador-*.html            Jornada do prestador (11 telas)
 ├── manifest.webmanifest        Permite "Adicionar à tela inicial" no celular
 └── assets/
-    ├── app.css                 Cores, tipografia e componentes
-    ├── app.js                  Ícones e lógica de estado das telas (sem bibliotecas)
+    ├── app.css                 Cores, tipografia e componentes (base mobile)
+    ├── desktop.css             Disposição das telas a partir de 900 px
+    ├── app.js                  Ícones, lógica de estado e moldura do desktop (sem bibliotecas)
     └── logo.png, icon-*.png
 ```
 
@@ -44,3 +53,16 @@ Cada tela guarda um pequeno estado em `<body data-state='{...}'>`. Atributos HTM
 - `data-show="expressão"` mostra o elemento só quando a expressão vale;
 - `data-on="expressão"` marca o botão como selecionado;
 - `?chave=valor` na URL muda o estado inicial (ex.: `pedido.html?passo=3`).
+
+## Layouts do desktop
+
+Cada página declara no `<body>` o seu layout (`data-layout`) e o lado do usuário (`data-lado`). O `app.js` usa esses atributos para montar a barra superior, o menu lateral ou o painel da marca:
+
+| `data-layout` | Uso | Páginas |
+|---|---|---|
+| `landing` | Página pública | `index.html` |
+| `auth` | Cadastro e login, tela dividida | `cadastro`, `entrar`, `esqueci-senha`, `prestador-cadastro`, `prestador-evidencias` (e `prestador-agenda?novo=true`) |
+| `shell` | Telas principais, largas | `inicio`, `busca`, `pedidos`, `conta`, `prestador-inicio`, `prestador-ganhos`, `prestador-perfil`, `prestador-desempenho`, `prestador-agenda` |
+| `aside` | Conteúdo + cartão de ação fixo à direita | `perfil`, `solicitar`, `prestador-pedido`, `prestador-servico` |
+| `inbox` | Caixa de entrada | `mensagens` |
+| `center` | Fluxos e leitura, coluna central | as demais |

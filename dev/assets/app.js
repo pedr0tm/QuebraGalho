@@ -164,6 +164,59 @@
     after: null,
     render: render
   };
-  document.addEventListener('DOMContentLoaded', render);
-  if (document.readyState !== 'loading') setTimeout(render, 0);
+  /* ---------- moldura do desktop (escondida no celular pelo CSS) ---------- */
+  function chrome() {
+    if (body.getAttribute('data-chrome')) return;
+    body.setAttribute('data-chrome', '1');
+    var q = new URLSearchParams(location.search);
+    var lado = body.getAttribute('data-lado') || 'c';
+    if (lado === 'comum') lado = (q.get('lado') === 'prestador' || q.get('dono') === 'true') ? 'p' : 'c';
+    body.setAttribute('data-lado', lado);
+    var layout = body.getAttribute('data-layout');
+    var page = body.getAttribute('data-page');
+    var cur = function (p) { return p === page ? ' aria-current="page"' : ''; };
+    var logo = '<a class="dlogo" href="' + (lado === 'p' ? 'prestador-inicio.html' : 'inicio.html') + '"><img src="assets/logo.png" alt="">Quebra Galho</a>';
+    var html = '';
+    if (layout === 'landing') return;
+    if (layout === 'auth') {
+      var pr = lado === 'p';
+      html = '<aside class="dbrand d-only' + (pr ? ' p' : '') + '" aria-hidden="true">' +
+        '<a class="dlogo" href="index.html" tabindex="-1"><img src="assets/logo.png" alt="">Quebra Galho</a>' +
+        (pr ? '<h2>Mais trabalho, com pagamento garantido.</h2><ul>' +
+              '<li><i data-i="calendario"></i>Pedidos só nos dias, horários e bairros que você escolher.</li>' +
+              '<li><i data-i="escudo"></i>Selo de verificado e avaliações que viram indicação.</li>' +
+              '<li><i data-i="dinheiro"></i>O cliente paga pela plataforma e você recebe em até 2 dias úteis.</li></ul>'
+            : '<h2>Profissionais do seu bairro, com avaliações de verdade.</h2><ul>' +
+              '<li><i data-i="busca"></i>Compare preço, nota e disponibilidade antes de chamar.</li>' +
+              '<li><i data-i="escudo"></i>Perfis com documentos verificados.</li>' +
+              '<li><i data-i="check"></i>Você só paga depois de confirmar que o serviço ficou pronto.</li></ul>') +
+        '<p class="tiny">Projeto acadêmico · PA1 2026.2</p></aside>';
+    } else if (lado === 'p') {
+      html = '<aside class="dside d-only">' + logo +
+        '<a class="it" href="prestador-inicio.html"' + cur('prestador-inicio') + '><i data-i="casa"></i>Início</a>' +
+        '<a class="it" href="prestador-notificacoes.html"' + cur('prestador-notificacoes') + '><i data-i="sino"></i>Notificações<span class="cnt">3</span></a>' +
+        '<a class="it" href="prestador-agenda.html"' + cur('prestador-agenda') + '><i data-i="calendario"></i>Agenda</a>' +
+        '<a class="it" href="prestador-ganhos.html"' + cur('prestador-ganhos') + '><i data-i="dinheiro"></i>Ganhos</a>' +
+        '<a class="it" href="mensagens.html?lado=prestador"' + cur('mensagens') + '><i data-i="chat"></i>Mensagens</a>' +
+        '<p class="lab">Seu negócio</p>' +
+        '<a class="it" href="prestador-perfil.html"' + cur('prestador-perfil') + '><i data-i="estrela"></i>Reputação</a>' +
+        '<a class="it" href="prestador-desempenho.html"' + cur('prestador-desempenho') + '><i data-i="grafico"></i>Desempenho</a>' +
+        '<a class="it" href="prestador-cadastro.html?editar=true"' + cur('prestador-cadastro') + '><i data-i="lapis"></i>Editar perfil</a>' +
+        '<div class="foot-side"><a class="pubcard" href="perfil.html?dono=true"><b>Ver meu perfil público</b>Como os clientes veem você</a>' +
+        '<div class="me"><span class="av" style="width: 36px; height: 36px; font-size: 13px">WL</span><span><b style="display: block; font-size: 14px">Wagner Lima</b><span style="font-size: 12px; color: #CFC8C1">Pintor · Gesseiro</span></span>' +
+        '<a href="index.html" aria-label="Sair da conta"><i data-i="sair" class="s"></i></a></div></div></aside>';
+    } else {
+      html = '<header class="dhead d-only"><div class="dhead-in">' + logo +
+        '<form class="dsearch" action="busca.html" role="search"><i data-i="busca" class="s"></i><label class="sr" for="dq">Buscar serviço</label><input id="dq" name="termo" placeholder="Que serviço você precisa?"></form>' +
+        '<nav class="dnav" aria-label="Navegação principal"><a href="inicio.html"' + cur('inicio') + '>Início</a><a href="busca.html"' + cur('busca') + '>Buscar</a><a href="pedidos.html"' + cur('pedidos') + '>Meus pedidos</a><a href="mensagens.html"' + cur('mensagens') + '>Mensagens</a></nav>' +
+        '<a class="icon-btn" style="border: 0" href="notificacoes.html" aria-label="Notificações, 2 novas"><i data-i="sino"></i><span class="dot-new" style="border-color: #fff"></span></a>' +
+        '<a class="dme" href="conta.html"' + cur('conta') + '><span class="av c">DS</span>Daniela</a>' +
+        '</div></header>';
+    }
+    body.insertAdjacentHTML('afterbegin', html);
+    icons(body.firstElementChild);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () { chrome(); render(); });
+  if (document.readyState !== 'loading') setTimeout(function () { chrome(); render(); }, 0);
 })();
