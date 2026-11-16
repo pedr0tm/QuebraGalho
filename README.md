@@ -4,7 +4,9 @@
 
 Cano estourou? Grama alta? Reforma sem saber por onde começar? O **Quebra Galho** reúne encanadores, eletricistas, jardineiros, pedreiros, marceneiros e outros profissionais em um só lugar, para que contratar um serviço seja rápido, transparente e confiável para os dois lados.
 
-📌 **Status:** descoberta, modelagem do negócio e planejamento do projeto concluídos. Início do desenvolvimento do MVP na pasta [`dev/`](dev/).
+📌 **Status:** protótipo navegável completo, nas versões mobile e desktop, publicado no GitHub Pages. Versão atual: **v0.2.0**.
+
+🔗 **Acesse o protótipo:** [pedr0tm.github.io/QuebraGalho/dev](https://pedr0tm.github.io/QuebraGalho/dev/)
 
 ---
 
@@ -18,6 +20,8 @@ Cano estourou? Grama alta? Reforma sem saber por onde começar? O **Quebra Galho
 - [Concorrentes](#-concorrentes)
 - [Roadmap](#-roadmap)
 - [Planejamento do projeto](#-planejamento-do-projeto)
+- [Protótipo](#-protótipo)
+- [Versões](#-versões)
 - [Progresso](#-progresso)
 - [Documentação](#-documentação)
 - [Estrutura do repositório](#-estrutura-do-repositório)
@@ -151,7 +155,7 @@ Versão em PDF (A1, para impressão): [Project Model Canvas](docs/PMC_Quebra_Gal
 
 ### Backlog de user stories
 
-As 37 user stories foram priorizadas por valor de negócio e risco na [planilha de planejamento](<docs/PlanejamentoUserStories (1).xlsx>). As primeiras iterações do MVP são:
+As 37 user stories foram priorizadas por valor de negócio e risco na [planilha de planejamento](docs/PlanejamentoUserStories.xlsx). As primeiras iterações do MVP são:
 
 | Iteração | História | Pontos |
 |---|---|---|
@@ -159,6 +163,35 @@ As 37 user stories foram priorizadas por valor de negócio e risco na [planilha 
 | 1 | Cadastrar perfil de prestador | 2 |
 | 2 | Cadastrar usuário | 5 |
 | 3 | Autenticar usuário | 1 |
+
+---
+
+## 📱 Protótipo
+
+Protótipo navegável das duas jornadas descritas no [Problem-Solution Fit](docs/psf.pdf), cobrindo as 37 user stories da planilha. São 30 telas em HTML, CSS e JavaScript puros, sem frameworks.
+
+**Como abrir:** o mesmo link funciona no celular e no computador.
+
+- **No celular** (ou no modo de dispositivo do navegador, `F12` → ícone de celular), aparece o formato de aplicativo.
+- **No computador** (janelas a partir de 900 px), aparece a versão desktop: página pública com busca e "Como funciona", barra superior para o contratante, painel com menu lateral para o prestador e cadastro em tela dividida.
+
+| Jornada | Começa em | Passos |
+|---|---|---|
+| **Contratante (Daniela)** | [Página inicial](https://pedr0tm.github.io/QuebraGalho/dev/) → "Preciso de um serviço" | Cadastro → busca e comparação → perfil do profissional → solicitação → acompanhamento → conclusão → pagamento → avaliação |
+| **Prestador (Wagner)** | [Página inicial](https://pedr0tm.github.io/QuebraGalho/dev/) → "Quero oferecer meus serviços" | Perfil → evidências → agenda → oportunidades → proposta → execução do serviço → recebimento → reputação |
+
+Os botões marcados como **Demonstração** simulam a resposta da outra pessoa (por exemplo, o profissional aceitando o pedido) para mostrar o fluxo completo. Detalhes técnicos em [`dev/README.md`](dev/README.md).
+
+**Identidade visual:** laranja `#EC6F2D`, grafite `#252525`, cinza `#F5F5F5` e branco. Botões e links usam o laranja `#B84A14`, que passa no contraste AA do verificador da Adobe (5,21:1 com texto branco).
+
+---
+
+## 🏷️ Versões
+
+| Versão | Data | O que mudou |
+|---|---|---|
+| [v0.2.0](https://github.com/pedr0tm/QuebraGalho/releases/tag/v0.2.0) | 11/11/2026 | Versão desktop: as mesmas páginas passam a se adaptar ao computador, com página pública, barra superior, menu lateral do prestador e caixa de mensagens em duas colunas |
+| [v0.1.0](https://github.com/pedr0tm/QuebraGalho/releases/tag/v0.1.0) | 11/11/2026 | Protótipo mobile: 30 telas das duas jornadas e as 37 user stories |
 
 ---
 
@@ -182,9 +215,12 @@ As 37 user stories foram priorizadas por valor de negócio e risco na [planilha 
 - [ ] Mapas de empatia
 - [ ] Link do formulário de validação no documento
 
-**Desenvolvimento**
+**Prototipação**
 
-- [ ] Fase 1 do roadmap: MVP de descoberta e perfis
+- [x] Identidade visual (logo, paleta e verificação de contraste)
+- [x] Protótipo mobile das duas jornadas (v0.1.0)
+- [x] Versão desktop responsiva (v0.2.0)
+- [x] Publicação no GitHub Pages
 
 ---
 
@@ -205,17 +241,18 @@ Os documentos ficam em [`docs/`](docs/) e as imagens dos diagramas em [`assets/`
 | 09 | Canvas de Proposta de Valor: [Prestador](assets/canvas_proposta_valor_p.png) · [Contratante](assets/canvas_proposta_valor_c.png) | Perfil do cliente e mapa de valor |
 | 10 | [Elevator pitch](docs/elevator_pitch.pdf) | Estrutura e texto do pitch |
 | 11 | [Roadmap estratégico](docs/roadmap_estrategico.pdf) | Fases do produto e métricas sugeridas |
-| 12 | [Planejamento de user stories](<docs/PlanejamentoUserStories (1).xlsx>) | Backlog priorizado por valor e risco, com iterações |
+| 12 | [Planejamento de user stories](docs/PlanejamentoUserStories.xlsx) | Backlog priorizado por valor e risco, com iterações |
 | 13 | [Project Model Canvas](docs/PMC_Quebra_Galho.pdf) · [imagem](assets/project_model_canvas.png) | Planejamento do projeto em um único quadro |
+| 14 | [Protótipo navegável](https://pedr0tm.github.io/QuebraGalho/dev/) · [código](dev/) | As duas jornadas em 30 telas, mobile e desktop |
 
 ---
 
 ## 🗂️ Estrutura do repositório
 
 ```
-2026_2_PA1/
+QuebraGalho/
 ├── assets/   ← imagens dos diagramas (canvas e PMC)
-├── dev/      ← código do MVP
+├── dev/      ← protótipo navegável (publicado no GitHub Pages)
 ├── docs/     ← documentos do projeto (PDF e planilha)
 └── README.md
 ```
