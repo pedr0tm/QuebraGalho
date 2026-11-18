@@ -2,7 +2,7 @@
 
 Protótipo navegável (mobile e desktop) das duas jornadas do PSF (contratante e prestador), cobrindo as 37 histórias da planilha `PlanejamentoUserStories.xlsx`.
 
-**Versão:** v0.2.0 (mobile + desktop).
+**Versão:** v0.2.1 (mobile + desktop).
 
 **Como abrir:** é o mesmo endereço no celular e no computador. Abaixo de 900 px de largura aparece o formato de app; a partir de 900 px aparece a versão desktop:
 

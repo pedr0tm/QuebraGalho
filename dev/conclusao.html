@@ -13,8 +13,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
-<link rel="stylesheet" href="assets/app.css">
-<link rel="stylesheet" href="assets/desktop.css">
+<link rel="stylesheet" href="assets/app.css?v=0.2.1">
+<link rel="stylesheet" href="assets/desktop.css?v=0.2.1">
 </head>
 <body data-page="conclusao" data-layout="center" data-lado="c" data-state='{"st": "confirmar", "tipo": "incompleto", "fotos": 0}'>
 <div class="app">
@@ -79,7 +79,7 @@
     <a class="btn-dark" href="disputa.html" data-show="st=analise" hidden>Acompanhar relato</a>
   </footer>
 </div>
-<script src="assets/app.js"></script>
+<script src="assets/app.js?v=0.2.1"></script>
 <script>
 App.computed = function (s) {
   return { f1: s.fotos >= 1, f2: s.fotos >= 2, titulo: { confirmar: 'Serviço concluído?', problema: 'Relatar problema', analise: 'Relato enviado' }[s.st] };

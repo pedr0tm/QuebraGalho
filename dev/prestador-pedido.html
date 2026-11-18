@@ -13,8 +13,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
-<link rel="stylesheet" href="assets/app.css">
-<link rel="stylesheet" href="assets/desktop.css">
+<link rel="stylesheet" href="assets/app.css?v=0.2.1">
+<link rel="stylesheet" href="assets/desktop.css?v=0.2.1">
 </head>
 <body data-page="prestador-pedido" data-layout="aside" data-lado="p" data-state='{"st": "aberto", "modo": "valor", "hora": "hoje18"}'>
 <div class="app">
@@ -84,7 +84,7 @@
     <a class="btn-dark" href="prestador-inicio.html" data-show="st=enviado|st=recusado" hidden>Voltar aos pedidos</a>
   </footer>
 </div>
-<script src="assets/app.js"></script>
+<script src="assets/app.js?v=0.2.1"></script>
 <script>
 var horas = { hoje18: 'Hoje, 18h', amanha8: 'Amanhã, 8h', amanha18: 'Amanhã, 18h' };
 App.computed = function (s) { return { enviadoTxt: s.modo === 'valor' ? 'Proposta enviada: R$ 420' : 'Visita proposta: ' + horas[s.hora] + ' · R$ 90' }; };
