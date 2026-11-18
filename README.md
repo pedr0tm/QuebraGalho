@@ -4,7 +4,7 @@
 
 Cano estourou? Grama alta? Reforma sem saber por onde começar? O **Quebra Galho** reúne encanadores, eletricistas, jardineiros, pedreiros, marceneiros e outros profissionais em um só lugar, para que contratar um serviço seja rápido, transparente e confiável para os dois lados.
 
-📌 **Status:** protótipo navegável completo, nas versões mobile e desktop, publicado no GitHub Pages. Versão atual: **v0.2.0**.
+📌 **Status:** protótipo navegável completo, nas versões mobile e desktop, publicado no GitHub Pages. Versão atual: **v0.2.1**.
 
 🔗 **Acesse o protótipo:** [pedr0tm.github.io/QuebraGalho/dev](https://pedr0tm.github.io/QuebraGalho/dev/)
 
@@ -61,9 +61,15 @@ O Quebra Galho atende dois lados do marketplace ao mesmo tempo:
 | Persona | Ocupação | Dor principal | Objetivo na plataforma |
 |---|---|---|---|
 | **Daniela Santos** | Funcionária de lanchonete | Não consegue achar alguém para reformar sua casa | Contatar um profissional que atenda às suas necessidades |
-| **Wagner Moura** | Pintor, marceneiro e gesseiro | Não consegue trabalho e, quando consegue, é mal pago | Manter a agenda cheia, com trabalhos regulares e pagamento justo |
+| **Wagner Lima** | Pintor, marceneiro e gesseiro | Não consegue trabalho e, quando consegue, é mal pago | Manter a agenda cheia, com trabalhos regulares e pagamento justo |
 
-As dores foram levantadas com formulário e entrevistas, cujo roteiro está em [Validação das dores](docs/validacao_dores.pdf). Os jobs de cada segmento estão em [Jobs to be Done](docs/jtbd.pdf).
+### Mapas de empatia
+
+![Mapa de empatia do prestador de serviço](assets/mapa_empatia_prestador.png)
+
+![Mapa de empatia do contratante](assets/mapa_empatia_contratante.png)
+
+As dores foram levantadas com [formulário](https://docs.google.com/forms/d/e/1FAIpQLSdNjgx2g5_Tx0FvG7CkpYUH3PhulEErUcVpk55bW9lUslVJnw/viewform?usp=sharing&ouid=104003055580044459240) ([respostas](https://docs.google.com/spreadsheets/d/1RmJK_cQdAopZQwQJ1YSiZPym2yuxYWkiNe7n8I16Fuc/edit?usp=sharing)) e entrevistas, cujo roteiro está em [Validação das dores](docs/validacao_dores.pdf). Os jobs de cada segmento estão em [Jobs to be Done](docs/jtbd.pdf).
 
 ---
 
@@ -190,6 +196,7 @@ Os botões marcados como **Demonstração** simulam a resposta da outra pessoa (
 
 | Versão | Data | O que mudou |
 |---|---|---|
+| [v0.2.1](https://github.com/pedr0tm/QuebraGalho/releases/tag/v0.2.1) | 16/11/2026 | Mapas de empatia, link do formulário de validação, nome do produto no PSF, persona Wagner Lima e comissão de 15% nas telas de ganhos |
 | [v0.2.0](https://github.com/pedr0tm/QuebraGalho/releases/tag/v0.2.0) | 11/11/2026 | Versão desktop: as mesmas páginas passam a se adaptar ao computador, com página pública, barra superior, menu lateral do prestador e caixa de mensagens em duas colunas |
 | [v0.1.0](https://github.com/pedr0tm/QuebraGalho/releases/tag/v0.1.0) | 11/11/2026 | Protótipo mobile: 30 telas das duas jornadas e as 37 user stories |
 
@@ -212,8 +219,8 @@ Os botões marcados como **Demonstração** simulam a resposta da outra pessoa (
 - [x] Roadmap estratégico
 - [x] Backlog de user stories priorizado
 - [x] Project Model Canvas
-- [ ] Mapas de empatia
-- [ ] Link do formulário de validação no documento
+- [x] Mapas de empatia
+- [x] Link do formulário de validação no documento
 
 **Prototipação**
 
@@ -232,7 +239,7 @@ Os documentos ficam em [`docs/`](docs/) e as imagens dos diagramas em [`assets/`
 |---|---|---|
 | 01 | [Ideia inicial](docs/Projeto.pdf) | Proposta original, exemplos de uso, concorrentes e ideias de nome |
 | 02 | [É, não é, faz e não faz](docs/e_nao_e_faz_e_nao_faz.pdf) | Delimitação do escopo do produto |
-| 03 | [Segmentos de clientes](docs/clientes.pdf) | Segmentos, dores e personas |
+| 03 | [Segmentos de clientes](docs/clientes.pdf) | Segmentos, dores, mapas de empatia e personas |
 | 04 | [Validação das dores](docs/validacao_dores.pdf) | Formulário e roteiro de entrevistas com o público |
 | 05 | [Jobs to be Done](docs/jtbd.pdf) | Jobs funcionais de prestadores e contratantes |
 | 06 | [Problem-Solution Fit](docs/psf.pdf) | Consolidação do problema, da solução e das hipóteses |
@@ -251,7 +258,7 @@ Os documentos ficam em [`docs/`](docs/) e as imagens dos diagramas em [`assets/`
 
 ```
 QuebraGalho/
-├── assets/   ← imagens dos diagramas (canvas e PMC)
+├── assets/   ← imagens dos diagramas (canvas, mapas de empatia e PMC)
 ├── dev/      ← protótipo navegável (publicado no GitHub Pages)
 ├── docs/     ← documentos do projeto (PDF e planilha)
 └── README.md
